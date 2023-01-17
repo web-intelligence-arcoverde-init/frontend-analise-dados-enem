@@ -1,8 +1,8 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-const SignIn = lazy(() =>
-  import('src/pages/SignIn').then(module => ({
+const Home = lazy(() =>
+  import('src/pages/Home').then(module => ({
     default: module.SignIn,
   })),
 )
@@ -16,7 +16,7 @@ export const RoutesConfig = () => {
   return (
     <Suspense fallback={<span>Loading...</span>}>
       <Routes>
-        <Route path="/" element={<SignIn />} />
+        <Route path="/" element={<Home />} />
 
         <Route path="*" element={<GenericNotFound />} />
       </Routes>
