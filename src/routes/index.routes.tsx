@@ -2,8 +2,8 @@ import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 const Home = lazy(() =>
-  import('src/pages/Home').then(module => ({
-    default: module.SignIn,
+  import('src/pages/Home/Home').then(module => ({
+    default: module.Home,
   })),
 )
 const GenericNotFound = lazy(() =>
