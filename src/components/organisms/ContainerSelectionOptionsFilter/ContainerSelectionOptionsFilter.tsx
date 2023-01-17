@@ -16,7 +16,7 @@ export const Button = styled.button`
 
 export const Container = styled.div`
   background: ${COLORS['blue-100']};
-  width: 100%;
+  width: 80%;
   margin-top: 50px;
   padding: 30px 40px;
   border-radius: 16px;
@@ -45,7 +45,9 @@ const optionsKnowledgeArea = [
   { value: '5', text: 'Redação' },
 ]
 
-const optionYears = [{ value: '2018', text: '2018' }]
+const optionYears = [
+  { value: '2018', text: 'Linguagens, Códigos e suas Tecnologias' },
+]
 
 export const ContainerSelectionOptionsFilter = () => {
   return (
@@ -53,7 +55,7 @@ export const ContainerSelectionOptionsFilter = () => {
       <GroupOptions>
         <SelectInput label="Estado" options={options} />
         <SelectInput label="Cidade" options={options} />
-        <SelectInput label="Ano" options={optionYears} />
+        <SelectInput label="Ano" options={options} />
       </GroupOptions>
       <Divider />
       <SelectInput label="Escola" options={options} />

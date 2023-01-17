@@ -28,18 +28,31 @@ export const TitleContainer = styled.div`
   align-items: center;
 `
 
+export const Content = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  padding: 0 40px;
+`
+
 export const Home = () => {
   return (
-    <div>
+    <div style={{ background: '#F2F2F2', height: '100vh' }}>
       <Header>
         <TitleContainer>
-          <Title>ENEM</Title>
+          <Title>Visualização de Dados do ENEM</Title>
         </TitleContainer>
 
         <ContainerHeader />
       </Header>
-
-      <ContainerSelectionOptionsFilter />
+      <Content>
+        <ContainerSelectionOptionsFilter />
+      </Content>
     </div>
   )
 }
