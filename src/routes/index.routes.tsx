@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { Competence } from 'src/pages/Competence/Competence'
 
 const Home = lazy(() =>
   import('src/pages/Home/Home').then(module => ({
@@ -7,9 +8,9 @@ const Home = lazy(() =>
   })),
 )
 
-const ExampleChart = lazy(() =>
-  import('src/pages/ExampleChart/ExampleChart').then(module => ({
-    default: module.ExampleChart,
+const Charts = lazy(() =>
+  import('src/pages/Charts/Charts').then(module => ({
+    default: module.Charts,
   })),
 )
 
@@ -25,7 +26,9 @@ export const RoutesConfig = () => {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/chart" element={<ExampleChart />} />
+        <Route path="/charts" element={<Charts />} />
+
+        <Route path="/competence" element={<Competence />} />
 
         <Route path="*" element={<GenericNotFound />} />
       </Routes>

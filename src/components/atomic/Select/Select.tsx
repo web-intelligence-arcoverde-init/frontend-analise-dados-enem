@@ -23,23 +23,24 @@ const Select = styled.select`
 
 interface OptionProps {
   value: string
-  text: string
 }
 
 interface SelectInputProps {
   label: string
   options: OptionProps[]
+  onChange?: (e: any) => any,
+  name?: string,
 }
 
-export const SelectInput = ({ label, options }: SelectInputProps) => {
+export const SelectInput = ({ label, options, onChange, name }: SelectInputProps) => {
   return (
     <Container>
       <Label>{label}:</Label>
-      <Select>
+      <Select onChange={onChange} name={name}>
         {options.map(item => {
           return (
-            <option value={item.value} key={item.text}>
-              {item.text}
+            <option value={item.value} key={item.value}>
+              {item.value}
             </option>
           )
         })}

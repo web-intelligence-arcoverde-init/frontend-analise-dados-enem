@@ -5,9 +5,10 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js'
-import { PolarArea } from 'react-chartjs-2'
+import { Doughnut } from 'react-chartjs-2'
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend)
+ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend, ChartDataLabels)
 
 const data = {
   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -24,10 +25,17 @@ const data = {
         'rgba(255, 159, 64, 0.5)',
       ],
       borderWidth: 1,
+      datalabels: {
+        color: 'black',
+        font: {
+          weight: 'bolder',
+          size: '13'
+        },
+      },
     },
   ],
 }
 
 export const SkillsHighestPercentageSuccessesChart = () => {
-  return <PolarArea data={data} />
+  return <Doughnut data={data} />
 }

@@ -1,0 +1,57 @@
+.main {
+    display: grid;
+    grid-template-columns: 13% 31% 31% 1fr;
+    grid-template-rows: repeat(3, 33%);
+    grid-template-areas:
+        "left_informations essay essay highestPercent"
+        "left_informations skills skills highestPercent"
+        "left_informations chooseAndHability chooseAndHability competence";
+    height: calc(100vh - 70px);
+    grid-gap: 5px;
+    padding: 5px;
+    background-color: whitesmoke;
+}
+
+.essay,
+.skills,
+.highestPercent,
+.competence {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    box-shadow: var(--shadow);
+}
+
+.essay {
+    grid-area: essay;
+}
+
+.skills {
+    grid-area: skills;
+}
+
+.highestPercent {
+    grid-area: highestPercent;
+}
+
+.competence {
+    display: flex;
+    justify-content: center;
+    grid-area: competence;
+    flex-direction: column;
+}
+
+.competence canvas {
+ box-sizing: border-box;
+ padding: 20px 5px;
+}
+
+.competence a {
+    margin-top: -10px;
+}

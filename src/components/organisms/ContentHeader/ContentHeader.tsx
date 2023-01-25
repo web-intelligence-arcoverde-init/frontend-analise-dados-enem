@@ -38,6 +38,7 @@ export const ContainerHeader = () => {
           width: '350px',
           height: '220px',
           marginTop: '30px',
+          marginBottom: '20px'
         }}
       />
     </Content>
