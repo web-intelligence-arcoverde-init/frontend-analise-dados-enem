@@ -1,5 +1,5 @@
-import LinkButtom from 'src/pages/Charts/atomics/LinkButtom'
-import Header from 'src/pages/Charts/organisms/Header'
+import LinkButtom from 'src/components/PageCharts/atomics/LinkButtom'
+import Header from 'src/components/PageCharts/organisms/Header'
 import styles from './AboutHabilities.module.css'
 
 export const AboutHabilities = () => {
@@ -24,7 +24,7 @@ export const AboutHabilities = () => {
                            debitis assumenda ipsam illo dolore, 
                            veritatis deserunt voluptatem. Ratione.
                     </div>
-                    <LinkButtom to="/" label="Voltar" height={45} />
+                    <LinkButtom to="/" label="Voltar" height={45}  translateY="20px"/>
                 </div>
 
             </main>

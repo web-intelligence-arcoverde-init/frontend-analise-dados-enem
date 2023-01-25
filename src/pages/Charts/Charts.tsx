@@ -5,10 +5,11 @@ import {
     SkillsChart,
     SkillsHighestPercentageSuccessesChart
 } from '../../components'
-import Header from './organisms/Header'
-import LeftInfos from './organisms/ContainerLeftInfos/ContainerLeftInfos'
-import ContainerChooseAnSkill from './organisms/ContainerChooseAnSkill/ContainerChooseAnSkill'
-import LinkButtom from './atomics/LinkButtom'
+import Header from 'src/components/PageCharts/organisms/Header'
+import LeftInfos from 'src/components/PageCharts/organisms/ContainerLeftInfos/ContainerLeftInfos'
+import ContainerChooseAnSkill from 'src/components/PageCharts/organisms/ContainerChooseAnSkill/ContainerChooseAnSkill'
+import LinkButtom from 'src/components/PageCharts/atomics/LinkButtom'
+
 export const Charts = () => {
     // recebe os dados vindo na propiedade "state" do component Link
     const { state: { data } } = useLocation()

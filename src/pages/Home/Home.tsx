@@ -1,11 +1,11 @@
 import { COLORS } from '../../common'
 
-import { ContainerHeader } from '../../components/organisms/ContentHeader/ContentHeader'
+import { ContainerHeader } from 'src/components/PageHome/organisms/ContentHeader/ContentHeader'
 
-import { ContainerSelectionOptionsFilter } from '../../components'
+import { ContainerSelectionOptionsFilter } from 'src/components/PageHome/organisms'
 
 import styled from 'styled-components'
-import { ContentSection } from 'src/components/organisms/ContentSection/ContentSection'
+import { ContentSection } from 'src/components/PageHome/organisms/ContentSection/ContentSection' 
 
 const Title = styled.h1`
   color: ${COLORS['white-100']};

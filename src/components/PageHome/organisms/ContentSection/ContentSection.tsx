@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { TbZoomQuestion } from "react-icons/tb";
 
-import { COLORS } from '../../../common'
-import LinkButtom from 'src/pages/Charts/atomics/LinkButtom';
+import { COLORS } from 'src/common';
+import LinkButtom from 'src/components/PageCharts/atomics/LinkButtom';
 
 export const Content = styled.div`
 display: flex;

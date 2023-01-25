@@ -26,9 +26,7 @@
 
 .textContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 600px;
+    width: 800px;
     font-size: 18px;
     background-color: whitesmoke;
     height: 300px;

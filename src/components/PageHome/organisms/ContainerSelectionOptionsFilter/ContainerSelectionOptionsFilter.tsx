@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { COLORS } from 'src/common'
-import { SelectInput } from 'src/components'
+import { SelectInput } from '../../atomics' 
 import { getProvinces } from 'src/services/utils/externalAPIs'
 import { Link } from 'react-router-dom'
 

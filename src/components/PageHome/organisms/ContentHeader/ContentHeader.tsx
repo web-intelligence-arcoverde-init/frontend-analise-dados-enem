@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { IMAGES } from '../../../assets'
+import { IMAGES } from 'src/assets' 
 
 const { logo } = IMAGES
 

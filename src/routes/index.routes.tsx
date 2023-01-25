@@ -16,7 +16,7 @@ const Charts = lazy(() =>
 
 
 const Competence = lazy(() =>
-  import('src/pages/Competence/Competence').then(module => ({
+  import('src/pages/Competences/Competences').then(module => ({
     default: module.Competence,
   })),
 )
