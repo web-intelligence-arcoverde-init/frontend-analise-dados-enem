@@ -31,12 +31,12 @@ export const ContentSection = () => {
       <Question>
         <TbZoomQuestion style={{ fontSize: '50px' }} />
         <h5>O que são habilidades?</h5>
-        <LinkButtom to="/habilities" label="Saiba mais"  height={40}/>
+        <LinkButtom to="/about/habilities" label="Saiba mais"  height={40}/>
       </Question>
       <Question>
         <TbZoomQuestion style={{ fontSize: '50px' }} />
         <h5>O que são competências?</h5>
-        <LinkButtom to="" label="Saiba mais" height={40}/>
+        <LinkButtom to="/about/competences" label="Saiba mais" height={40}/>
       </Question>
     </Content>
   )

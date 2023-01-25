@@ -15,7 +15,7 @@ export const Charts = () => {
 
     return (
         <>
-           <Header/>
+           <Header label="Gráficos Analíticos" />
             <main className={styles.main}>
                 <LeftInfos/>
                 <div className={styles.essay}>

@@ -18,6 +18,7 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+
 }
 
 .topContainer {
@@ -25,13 +26,14 @@
     justify-content: left;
     gap: 15px;
     width: 100%;
+    margin-bottom: 5px;
 }
 
 .bottomContainer {
     align-items: center;
     justify-content: space-evenly;
     display: flex;
-    height: 90%;
+    height: 85%;
     width: 100%;
     gap: 10px;
 }
@@ -43,13 +45,13 @@
 
 .textBox {
     font-size: 19px;
-    width: 60%;
+    width: 50%;
     background-color: whitesmoke;
     height: 100%;
 }
 
 .chartBox {
-    width: 40%;
+    width: 50%;
     height: 100%;
     background-color: whitesmoke;
 }

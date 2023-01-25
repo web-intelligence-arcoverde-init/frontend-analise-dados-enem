@@ -1,6 +1,6 @@
 import styles from './Competence.module.css'
 import { useLocation } from 'react-router-dom'
-import Header from './organisms/Header'
+import Header from '../Charts/organisms/Header'
 import LeftInfos from './organisms/ContainerLeftInfos/ContainerLeftInfos'
 import { CompetenceChart } from 'src/components'
 import ContainerChooseAnCompetence from './organisms/ContainerChooseAnCompetence/ContainerChooseAnCompetence'
@@ -12,7 +12,7 @@ export const Competence = (): JSX.Element => {
 
     return (
         <>
-            <Header />
+            <Header label="Gráficos Analíticos"/>
             <main className={styles.main}>
                 <LeftInfos />
                 <div className={styles.competenceChart}>
