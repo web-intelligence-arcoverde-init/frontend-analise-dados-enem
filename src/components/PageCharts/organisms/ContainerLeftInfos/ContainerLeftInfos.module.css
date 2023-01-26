@@ -1,5 +1,5 @@
 .leftInformations {
-    grid-area: left_informations;
+    grid-area: leftInformations;
     display: flex;
     justify-content: space-between;
     align-items: center;

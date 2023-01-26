@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { COLORS } from 'src/common'
-import { SelectInput } from '../../atomics' 
+import { SelectInput } from '../../atomics'
 import { getProvinces } from 'src/services/utils/externalAPIs'
 import { Link } from 'react-router-dom'
 
@@ -43,19 +43,23 @@ const optionsKnowledgeArea = [
   { value: '2 - Ciências Humanas e suas Tecnologias' },
   { value: '3 - Matemática e suas Tecnologias' },
   { value: '4 - Ciências da Natureza e suas Tecnologias' },
-  { value: '5 - Redação' }
+  { value: '5 - Redação' },
 ]
 const options = [{ value: 'qualquer um' }, { value: 'outra opção' }]
-
 
 const optionYears = [
   { value: '2018', text: 'Linguagens, Códigos e suas Tecnologias' },
 ]
 
 const years = [
-  { value: '2015' }, { value: '2016' }, { value: '2017' },
-  { value: '2018' }, { value: '2019' }, { value: '2020' },
-  { value: '2021' }, { value: '2022' },
+  { value: '2015' },
+  { value: '2016' },
+  { value: '2017' },
+  { value: '2018' },
+  { value: '2019' },
+  { value: '2020' },
+  { value: '2021' },
+  { value: '2022' },
 ]
 
 export const ContainerSelectionOptionsFilter = () => {
@@ -65,9 +69,8 @@ export const ContainerSelectionOptionsFilter = () => {
     city: 'Arcoverde',
     year: '2022',
     school: 'EREM',
-    knowledgeArea: '1 - Linguagens, Códigos e suas Tecnologias'
+    knowledgeArea: '1 - Linguagens, Códigos e suas Tecnologias',
   })
-
 
   // busca e armazena lista de estados do Brasil
   const [provinces, setProvinces] = useState([])
@@ -75,40 +78,71 @@ export const ContainerSelectionOptionsFilter = () => {
     getProvinces().then(data => setProvinces(data))
   }, [])
 
-
   // captura os valores dos options e seta nos estados
   const onChangeHandler = (e: any) => {
-    e.preventDefault();
+    e.preventDefault()
     const optionValue = e.target[e.target.selectedIndex].value
 
     setData({
       ...data,
-      [e.target.name]: optionValue
+      [e.target.name]: optionValue,
     })
   }
 
   return (
     <Container>
       <GroupOptions>
-        <SelectInput label="Estado" name="province" options={provinces} onChange={e => { onChangeHandler(e) }} />
-        <SelectInput label="Cidade" name="city" options={options} onChange={e => { onChangeHandler(e) }} />
-        <SelectInput label="Ano" name="year" options={years} onChange={e => { onChangeHandler(e) }} />
+        <SelectInput
+          label="Estado"
+          name="province"
+          options={provinces}
+          onChange={e => {
+            onChangeHandler(e)
+          }}
+        />
+        <SelectInput
+          label="Cidade"
+          name="city"
+          options={options}
+          onChange={e => {
+            onChangeHandler(e)
+          }}
+        />
+        <SelectInput
+          label="Ano"
+          name="year"
+          options={years}
+          onChange={e => {
+            onChangeHandler(e)
+          }}
+        />
       </GroupOptions>
       <Divider />
-      <SelectInput label="Escola" name="school" options={options} onChange={e => { onChangeHandler(e) }} />
+      <SelectInput
+        label="Escola"
+        name="school"
+        options={options}
+        onChange={e => {
+          onChangeHandler(e)
+        }}
+      />
       <Divider />
       <SelectInput
         label="Área de conhecimento"
         options={optionsKnowledgeArea}
         name="knowledgeArea"
-        onChange={e => { onChangeHandler(e) }}
+        onChange={e => {
+          onChangeHandler(e)
+        }}
       />
       <Divider />
       <GroupButton>
-        <Link to="charts" state={{ data }}>
+        <Link to="/charts" state={{ data }}>
           <Button>Gerar Visão Geral</Button>
         </Link>
-        <Button>Gerar Mapa de Calor</Button>
+        <Link  to="/heatmap" state={{ data }}>
+          <Button>Gerar Mapa de Calor</Button>
+        </Link>
       </GroupButton>
     </Container>
   )
