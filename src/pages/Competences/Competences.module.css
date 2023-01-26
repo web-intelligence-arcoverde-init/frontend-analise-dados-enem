@@ -1,23 +1,23 @@
 .main {
-    display: grid;
-    grid-template-columns: 13% 1fr 1fr;
-    grid-template-rows: repeat(2, 49.5%);
-    grid-template-areas:
-        "leftInformations competenceChart competenceChart"
-        "leftInformations chooseAnCompetence chooseAnCompetence";
-    height: calc(100vh - 70px);
-    grid-gap: 5px;
-    padding: 5px;
-    background-color: whitesmoke;
+  display: grid;
+  grid-template-columns: 13% 1fr 1fr;
+  grid-template-rows: repeat(2, 49.5%);
+  grid-template-areas:
+    'leftInformations competenceChart competenceChart'
+    'leftInformations chooseAnCompetence chooseAnCompetence';
+  height: calc(100vh - 70px);
+  grid-gap: 5px;
+  padding: 5px;
+  background-color: whitesmoke;
 }
 
 .competenceChart {
-    height: 100%;
-    width: 100%;
-    grid-area: competenceChart;
-    background-color: white;
-    border-radius: 4px;
-    box-sizing: border-box;
-    padding: 20px;
-    box-shadow: var(--shadow);
+  height: 100%;
+  width: 100%;
+  grid-area: competenceChart;
+  background-color: white;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 20px;
+  box-shadow: var(--shadow);
 }

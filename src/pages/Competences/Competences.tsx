@@ -6,20 +6,22 @@ import { CompetenceChart } from 'src/components'
 import ContainerChooseAnCompetence from 'src/components/PageCompetences/organisms/ContainerChooseAnCompetence/ContainerChooseAnCompetence'
 
 export const Competence = (): JSX.Element => {
-    const { state: { data } } = useLocation()
+  const {
+    state: { data },
+  } = useLocation()
 
-    console.log(data)
+  console.log(data)
 
-    return (
-        <>
-            <Header label="Gráficos Analíticos"/>
-            <main className={styles.main}>
-                <LeftInfos />
-                <div className={styles.competenceChart}>
-                    <CompetenceChart />
-                </div>
-                <ContainerChooseAnCompetence />
-            </main>
-        </>
-    )
+  return (
+    <>
+      <Header label="Gráficos Analíticos" />
+      <main className={styles.main}>
+        <LeftInfos />
+        <div className={styles.competenceChart}>
+          <CompetenceChart />
+        </div>
+        <ContainerChooseAnCompetence />
+      </main>
+    </>
+  )
 }
