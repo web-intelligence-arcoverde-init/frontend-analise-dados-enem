@@ -12,7 +12,6 @@ import faker from 'faker'
 
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ChartDataLabels)
 
 const options = {
