@@ -68,6 +68,7 @@ const config = {
     },
     historyApiFallback: true,
     port: 3000,
+     hot: false
   },
   externals: {
     react: 'React',

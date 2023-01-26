@@ -1,10 +1,11 @@
 import { COLORS } from '../../common'
 
-import { ContainerHeader } from '../../components/organisms/ContentHeader/ContentHeader'
+import { ContainerHeader } from 'src/components/PageHome/organisms/ContentHeader/ContentHeader'
 
-import { ContainerSelectionOptionsFilter } from '../../components'
+import { ContainerSelectionOptionsFilter } from 'src/components/PageHome/organisms'
 
 import styled from 'styled-components'
+import { ContentSection } from 'src/components/PageHome/organisms/ContentSection/ContentSection' 
 
 const Title = styled.h1`
   color: ${COLORS['white-100']};
@@ -30,7 +31,7 @@ export const TitleContainer = styled.div`
 
 export const Content = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   align-items: center;
   justify-content: center;
@@ -40,6 +41,8 @@ export const Content = styled.div`
   padding: 0 40px;
 `
 
+
+
 export const Home = () => {
   return (
     <div style={{ background: '#F2F2F2', height: '100vh' }}>
@@ -47,10 +50,10 @@ export const Home = () => {
         <TitleContainer>
           <Title>Visualização de Dados do ENEM</Title>
         </TitleContainer>
-
         <ContainerHeader />
       </Header>
       <Content>
+          <ContentSection />
         <ContainerSelectionOptionsFilter />
       </Content>
     </div>

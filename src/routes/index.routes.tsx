@@ -1,15 +1,35 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
+
 const Home = lazy(() =>
   import('src/pages/Home/Home').then(module => ({
     default: module.Home,
   })),
 )
 
-const ExampleChart = lazy(() =>
-  import('src/pages/ExampleChart/ExampleChart').then(module => ({
-    default: module.ExampleChart,
+const Charts = lazy(() =>
+  import('src/pages/Charts/Charts').then(module => ({
+    default: module.Charts,
+  })),
+)
+
+
+const Competence = lazy(() =>
+  import('src/pages/Competences/Competences').then(module => ({
+    default: module.Competence,
+  })),
+)
+
+const AboutCompetences = lazy(() =>
+  import('src/pages/About/AboutCompetences/AboutCompetences').then(module => ({
+    default: module.AboutCompetences,
+  })),
+)
+
+const AboutHabilities = lazy(() =>
+  import('src/pages/About/AboutHabilities/AboutHabilities').then(module => ({
+    default: module.AboutHabilities,
   })),
 )
 
@@ -25,7 +45,13 @@ export const RoutesConfig = () => {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/chart" element={<ExampleChart />} />
+        <Route path="/charts" element={<Charts />} />
+
+        <Route path="/competence" element={<Competence />} />
+
+        <Route path="/about/competences" element={<AboutCompetences />} />
+
+        <Route path="/about/habilities" element={<AboutHabilities />} />
 
         <Route path="*" element={<GenericNotFound />} />
       </Routes>

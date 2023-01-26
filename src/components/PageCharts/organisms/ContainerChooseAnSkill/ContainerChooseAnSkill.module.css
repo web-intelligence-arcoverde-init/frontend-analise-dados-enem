@@ -1,0 +1,57 @@
+.chooseAnSkill {
+    grid-area: chooseAndHability;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.title {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.topContainer {
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.bottomContainer {
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    height: 85%;
+    width: 100%;
+    gap: 10px;
+}
+
+.textBox, .chartBox {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.textBox {
+    font-size: 19px;
+    width: 50%;
+    background-color: whitesmoke;
+    height: 100%;
+}
+
+.chartBox {
+    width: 50%;
+    height: 100%;
+    background-color: whitesmoke;
+}
