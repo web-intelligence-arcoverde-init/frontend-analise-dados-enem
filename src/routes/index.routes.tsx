@@ -31,6 +31,12 @@ const AboutCompetences = lazy(() =>
   })),
 )
 
+const AboutEssayCompetence = lazy(() =>
+  import('src/pages/About/AboutEssayCompetence/AboutEssayCompetence').then(module => ({
+    default: module.AboutEssayCompetence,
+  })),
+)
+
 const AboutHabilities = lazy(() =>
   import('src/pages/About/AboutHabilities/AboutHabilities').then(module => ({
     default: module.AboutHabilities,
@@ -56,6 +62,8 @@ export const RoutesConfig = () => {
         <Route path="/competence" element={<Competence />} />
 
         <Route path="/about/competences" element={<AboutCompetences />} />
+
+        <Route path="/about/essaycompetences" element={<AboutEssayCompetence />} />
 
         <Route path="/about/habilities" element={<AboutHabilities />} />
 

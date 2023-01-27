@@ -1,5 +1,6 @@
 import styles from './HeatTable.module.css'
 
+// substituir por dados da api
 const fakeData = [
   {
     habilities: 1,
@@ -135,7 +136,7 @@ const fakeData = [
     nHits: '33%',
     errors: 4,
     nPercentHits: '5%',
-    nPercentNordeste: '49%',
+    nPercentNordeste: '69%',
   },
   {
     habilities: 1,
@@ -167,7 +168,7 @@ const fakeData = [
     nHits: '33%',
     errors: 4,
     nPercentHits: '35%',
-    nPercentNordeste: '49%',
+    nPercentNordeste: '59%',
   },
   {
     habilities: 1,
@@ -191,7 +192,7 @@ const fakeData = [
     nHits: '33%',
     errors: 4,
     nPercentHits: '23%',
-    nPercentNordeste: '29%',
+    nPercentNordeste: '56%',
   },
 ]
 
@@ -206,10 +207,10 @@ export const HeatTable = () => {
 
     const heatColors = [
       { color: '#ffcdd2', min: 40, max: 54 },
-      { color: '#ef9a9a', min: 30, max: 40 },
+      { color: '#e58989', min: 30, max: 40 },
       { color: '#e57373', min: 20, max: 30 },
-      { color: '#e53935', min: 10, max: 20 },
-      { color: '#ea0909', min: 0, max: 10},
+      { color: '#e25754', min: 10, max: 20 },
+      { color: '#e53935', min: 0, max: 10},
     ]
 
     let color
@@ -252,16 +253,12 @@ export const HeatTable = () => {
                   <td>{td.nHits}</td>
                   <td>{td.errors}</td>
                   <td
-                    style={{
-                      backgroundColor: `${applyColor(td.nPercentHits)}`,
-                    }}
+                    style={{ backgroundColor: `${applyColor(td.nPercentHits)}`} }
                   >
                     {td.nPercentHits}
                   </td>
                   <td
-                    style={{
-                      backgroundColor: `${applyColor(td.nPercentNordeste)}`,
-                    }}
+                    style={ {backgroundColor: `${applyColor(td.nPercentNordeste)}`} }
                   >
                     {td.nPercentNordeste}
                   </td>

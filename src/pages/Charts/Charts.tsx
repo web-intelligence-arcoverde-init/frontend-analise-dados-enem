@@ -10,12 +10,16 @@ import Header from 'src/components/PageCharts/organisms/Header'
 import LeftInfos from 'src/components/PageCharts/organisms/ContainerLeftInfos/ContainerLeftInfos'
 import ContainerChooseAnSkill from 'src/components/PageCharts/organisms/ContainerChooseAnSkill/ContainerChooseAnSkill'
 import LinkButtom from 'src/components/PageCharts/atomics/LinkButtom'
+import { useEffect, useState } from 'react'
 
 export const Charts = () => {
   // recebe os dados vindo na propiedade "state" do component Link
-  const {
-    state: { data },
-  } = useLocation()
+  const [ storage, setStorage ] = useState()
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem('data'))
+    setStorage(data)
+  })
 
   return (
     <>
@@ -33,12 +37,7 @@ export const Charts = () => {
         </div>
         <div className={styles.competence}>
           <CompetenceChart />
-          <LinkButtom
-            to="/competence"
-            label="Competências"
-            height={30}
-            state={data}
-          />
+          <LinkButtom to="/competence" label="Competências" height={30} />
         </div>
         <ContainerChooseAnSkill />
       </main>

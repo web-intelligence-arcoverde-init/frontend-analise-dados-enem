@@ -6,7 +6,7 @@ import { RightInfos } from 'src/components/PageHeatMap/organisms/RightInfos/Righ
 export const HeatMap = () => {
   return (
     <>
-      <Header label="Mapa de calor" />
+      <Header label="Mapa de Calor" />
       <main className={styles.main}>
         <div className={styles.heatMap}>
           <HeatTable />

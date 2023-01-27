@@ -50,7 +50,7 @@ export const RightInfos = () => {
         </div>
         <div className={styles.chartBox}>
           <EssayChart />
-          <LinkButtom to="/about/competences" label="Competências" height={30} translateY="20px"/>
+          <LinkButtom to="/about/essaycompetences" label="Competências" height={30} translateY="20px"/>
         </div>
       </div>
     </aside>

@@ -62,9 +62,18 @@ const years = [
   { value: '2022' },
 ]
 
+
+interface dataModel {
+  province: string,
+  city: string,
+  year: string,
+  school: string,
+  knowledgeArea: string
+}
+
 export const ContainerSelectionOptionsFilter = () => {
   // dados que serão usados como filtro na página dos gráficos
-  const [data, setData] = useState({
+  const [data, setData] = useState<dataModel>({
     province: 'Pernambuco',
     city: 'Arcoverde',
     year: '2022',
@@ -72,11 +81,20 @@ export const ContainerSelectionOptionsFilter = () => {
     knowledgeArea: '1 - Linguagens, Códigos e suas Tecnologias',
   })
 
-  // busca e armazena lista de estados do Brasil
   const [provinces, setProvinces] = useState([])
+
   useEffect(() => {
+    // busca e armazena lista de estados do Brasil
     getProvinces().then(data => setProvinces(data))
+
+    // seta o localStorage
+    localStorageHandler(data)
   }, [])
+
+  const localStorageHandler = (storage: any) => {
+    // armazena dados do filtro no localStorage
+    localStorage.setItem("data", JSON.stringify(data) )
+  }
 
   // captura os valores dos options e seta nos estados
   const onChangeHandler = (e: any) => {
@@ -137,10 +155,10 @@ export const ContainerSelectionOptionsFilter = () => {
       />
       <Divider />
       <GroupButton>
-        <Link to="/charts" state={{ data }}>
+        <Link to="/charts" onClick={() => localStorageHandler(data)}>
           <Button>Gerar Visão Geral</Button>
         </Link>
-        <Link  to="/heatmap" state={{ data }}>
+        <Link  to="/heatmap" onClick={() => localStorageHandler(data)}>
           <Button>Gerar Mapa de Calor</Button>
         </Link>
       </GroupButton>
