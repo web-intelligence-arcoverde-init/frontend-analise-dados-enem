@@ -1,6 +1,7 @@
 import styles from './HeatMap.module.css'
 import Header from 'src/components/PageCharts/organisms/Header'
 import { HeatTable } from 'src/components'
+import { RightInfos } from 'src/components/PageHeatMap/organisms/RightInfos/RightInfos'
 
 export const HeatMap = () => {
   return (
@@ -11,7 +12,7 @@ export const HeatMap = () => {
           <HeatTable />
         </div>
         <div className={styles.rightInfo}>
-          
+          <RightInfos />
         </div>
       </main>
     </>

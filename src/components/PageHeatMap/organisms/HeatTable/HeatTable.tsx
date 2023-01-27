@@ -43,11 +43,137 @@ const fakeData = [
     errors: 4,
     nPercentHits: '5%',
   },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
+  {
+    habilities: 1,
+    nQuestions: 2,
+    nHits: '33%',
+    errors: 4,
+    nPercentHits: '5%',
+  },
 ]
 
 export const HeatTable = () => {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <table className={styles.table}>
         <thead>
           <tr className="tdRow">
@@ -64,15 +190,19 @@ export const HeatTable = () => {
         </thead>
         <tbody>
           {fakeData.map((td, i) => {
-            return (
-              <tr>
-                <td>{td.habilities}</td>
-                <td>{td.nQuestions}</td>
-                <td>{td.nHits}</td>
-                <td>{td.errors}</td>
-                <td>{td.nPercentHits}</td>
-              </tr>
-            )
+            if (i <= 30) {
+              return (
+                <tr>
+                  <td>{td.habilities}</td>
+                  <td>{td.nQuestions}</td>
+                  <td>{td.nHits}</td>
+                  <td>{td.errors}</td>
+                  <td>{td.nPercentHits}</td>
+                </tr>
+              )
+            } else {
+              return false
+            }
           })}
         </tbody>
       </table>
