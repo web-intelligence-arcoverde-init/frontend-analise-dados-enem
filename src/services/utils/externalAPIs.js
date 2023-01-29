@@ -1,27 +1,12 @@
 export const getProvinces = async () => {
-    const fetchData = await fetch('http://www.geonames.org/childrenJSON?geonameId=3469034')
+  const fetchData = await fetch('http://127.0.0.1:3333/uf')
+  const arrayFormatedDefault = []
 
-    const parseData = await fetchData.json()
-    const filtered = parseData.geonames.map(geoName => {
-        return {
-            value: geoName.toponymName
-        }
-    })
+  const parseData = await fetchData.json()
 
-    return filtered
+  parseData.forEach(item => {
+    arrayFormatedDefault.push({ value: item.sg_uf_esc.toUpperCase() })
+  })
+
+  return arrayFormatedDefault
 }
-
-
-// tem api?
-// export const getCities = async () => {
-//     const fetchData = await fetch('http://www.geonames.org/childrenJSON?geonameId=3469034')
-
-//     const parseData = await fetchData.json()
-//     const filtered = parseData.geonames.map(geoName => {
-//         return {
-//             value: geoName.toponymName
-//         }
-//     })
-
-//     return filtered
-// }
