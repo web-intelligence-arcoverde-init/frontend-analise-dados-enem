@@ -13,9 +13,6 @@ import LinkButtom from 'src/components/PageCharts/atomics/LinkButtom'
 
 export const Charts = () => {
   // recebe os dados vindo na propiedade "state" do component Link
-  const {
-    state: { data },
-  } = useLocation()
 
   return (
     <>
@@ -33,12 +30,6 @@ export const Charts = () => {
         </div>
         <div className={styles.competence}>
           <CompetenceChart />
-          <LinkButtom
-            to="/competence"
-            label="Competências"
-            height={30}
-            state={data}
-          />
         </div>
         <ContainerChooseAnSkill />
       </main>

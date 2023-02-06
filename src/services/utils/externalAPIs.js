@@ -8,5 +8,5 @@ export const getProvinces = async () => {
     arrayFormatedDefault.push({ value: item.sg_uf_esc.toUpperCase() })
   })
 
-  return arrayFormatedDefault
+  return []
 }
