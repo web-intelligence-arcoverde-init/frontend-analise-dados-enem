@@ -4,20 +4,26 @@ export const useHookSkills = () => {
   const [skills, setSkills] = useState([])
 
   useEffect(() => {
-    getSkills()
+    let local = localStorage.getItem('data')
+
+    if (local) {
+      local = JSON.parse(local)
+      console.log(local)
+      getSkills(local)
+    }
   }, [])
 
-  const requestOptions = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      materia: 'cn',
-    }),
-  }
+  const getSkills = async (escola: any) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        materia: escola.tecnologia,
+      }),
+    }
 
-  const getSkills = async () => {
     const fetchData = await fetch(
-      'http://127.0.0.1:3333/gabarito/26024691',
+      `http://127.0.0.1:3333/gabarito/${escola.cod_inep}`,
       requestOptions,
     )
     const parseData = await fetchData.json()

@@ -1,4 +1,4 @@
-import { SelectInput } from 'src/components'
+import { SelectInput, CustomSelect } from 'src/components'
 
 import { useEffect, useState } from 'react'
 
@@ -19,10 +19,20 @@ export const SelectSchool = ({ setEscola, cidade, ano }: any) => {
 
   const getEscolas = async () => {
     if (cidade !== '' && ano !== '') {
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          cidade,
+          ano,
+        }),
+      }
+
       const example = JSON.stringify(cidade)
 
       const fetchData = await fetch(
-        `http://127.0.0.1:3333/escola/${example.toLowerCase().trim()}/${ano}`,
+        `http://127.0.0.1:3333/escolas`,
+        requestOptions,
       )
 
       const parseData = await fetchData.json()
@@ -38,7 +48,7 @@ export const SelectSchool = ({ setEscola, cidade, ano }: any) => {
   }
 
   return (
-    <SelectInput
+    <CustomSelect
       label="Escola"
       name="school"
       options={escolas}

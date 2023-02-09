@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { SelectInput } from '../../PageHome/atomics'
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { Divider, Button, Container, GroupOptions, GroupButton } from './style'
 
@@ -13,11 +13,11 @@ import {
   SelectYear,
 } from 'src/components'
 
-const optionsKnowledgeArea = [
-  { value: '1 - Linguagens, Códigos e suas Tecnologias', code: '' },
-  { value: '2 - Ciências Humanas e suas Tecnologias', code: '' },
-  { value: '3 - Matemática e suas Tecnologias', code: '' },
-  { value: '4 - Ciências da Natureza e suas Tecnologias', code: '' },
+const optionsCechnology = [
+  { value: 'LC - Linguagens, Códigos e suas Tecnologias', code: 'lc' },
+  { value: 'CH - Ciências Humanas e suas Tecnologias', code: 'ch' },
+  { value: 'CN - Matemática e suas Tecnologias', code: 'cn' },
+  { value: 'MT - Ciências da Natureza e suas Tecnologias', code: 'mt' },
 ]
 
 export const OptionsFilterData = () => {
@@ -27,8 +27,18 @@ export const OptionsFilterData = () => {
   const [ano, setAno] = useState('')
   const [tecnologia, setTecnologia] = useState('')
 
-  const onChangeHandler = (e: any) => {
-    e.preventDefault()
+  const navigate = useNavigate()
+
+  const handleSubmit = () => {
+    const data = {
+      cod_inep: escola,
+      tecnologia,
+      ano,
+    }
+
+    localStorage.setItem('data', JSON.stringify(data))
+
+    navigate('/charts')
   }
 
   return (
@@ -43,17 +53,16 @@ export const OptionsFilterData = () => {
       <Divider />
       <SelectInput
         label="Área de conhecimento"
-        options={optionsKnowledgeArea}
+        options={optionsCechnology}
         name="knowledgeArea"
         onChange={e => {
-          setTecnologia(e.target.value)
+          setTecnologia(e.target.value.split(' ', 1)[0].toLowerCase())
         }}
       />
       <Divider />
       <GroupButton>
-        <Link to="charts">
-          <Button>Gerar Visão Geral</Button>
-        </Link>
+        <Button onClick={() => handleSubmit()}>Gerar Visão Geral</Button>
+
         <Button>Gerar Mapa de Calor</Button>
       </GroupButton>
     </Container>

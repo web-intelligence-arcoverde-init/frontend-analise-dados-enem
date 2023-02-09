@@ -5,11 +5,16 @@ export const useHookGabarito = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getProvinces()
+    let local = localStorage.getItem('data')
+
+    if (local) {
+      local = JSON.parse(local)
+      getProvinces(local?.cod_inep)
+    }
   }, [])
 
-  const getProvinces = async () => {
-    const fetchData = await fetch('http://127.0.0.1:3333/redacao/26024691')
+  const getProvinces = async (cod: any) => {
+    const fetchData = await fetch(`http://127.0.0.1:3333/redacao/${cod}`)
 
     const parseData = await fetchData.json()
     setRedacao(parseData)

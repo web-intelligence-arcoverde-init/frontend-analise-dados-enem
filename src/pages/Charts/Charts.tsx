@@ -11,7 +11,20 @@ import ContainerChooseAnSkill from 'src/components/PageCharts/organisms/Containe
 
 import { LinkButton } from 'src/components'
 
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 export const Charts = () => {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const localStorate = localStorage.getItem('data')
+
+    if (!localStorate) {
+      navigate('/')
+    }
+  }, [])
+
   return (
     <>
       <main className={styles.main}>
@@ -24,6 +37,7 @@ export const Charts = () => {
           <SkillsChart />
         </div>
 
+        {/* acertos e erros por habilidate [correto] */}
         <ContainerChooseAnSkill />
       </main>
     </>
