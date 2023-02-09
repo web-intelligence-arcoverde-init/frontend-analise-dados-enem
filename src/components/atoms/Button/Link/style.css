@@ -1,0 +1,14 @@
+.linkButtom a {
+  display: flex;
+  align-items: center;
+  background-color: var(--azul2);
+
+  border-radius: 4px;
+  padding: 0px 15px;
+  text-decoration: none;
+  color: white;
+}
+
+.linkButtom a:hover {
+  background-color: var(--azulescuro);
+}

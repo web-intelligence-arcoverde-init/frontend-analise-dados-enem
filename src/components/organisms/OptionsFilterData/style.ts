@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { COLORS } from '../../../../common'
+import { COLORS } from '../../../common'
 
 export const Divider = styled.div`
   height: 14px;

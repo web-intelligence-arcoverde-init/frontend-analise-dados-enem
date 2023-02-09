@@ -1,19 +1,34 @@
-import styles from './Charts.module.css'
-import { useLocation } from 'react-router-dom'
+import styles from './charts.module.css'
 import {
   CompetenceChart,
   EssayChart,
   SkillsChart,
   SkillsHighestPercentageSuccessesChart,
-} from '../../components'
+} from 'src/components'
 import Header from 'src/components/PageCharts/organisms/Header'
 import LeftInfos from 'src/components/PageCharts/organisms/ContainerLeftInfos/ContainerLeftInfos'
 import ContainerChooseAnSkill from 'src/components/PageCharts/organisms/ContainerChooseAnSkill/ContainerChooseAnSkill'
-import LinkButtom from 'src/components/PageCharts/atomics/LinkButtom'
 
 export const Charts = () => {
-  // recebe os dados vindo na propiedade "state" do component Link
+  return (
+    <>
+      <main className={styles.main}>
+        <div className={styles.essay}>
+          {/* media de cada competencia do ENEM [correto] */}
+          <EssayChart />
+        </div>
+        <div className={styles.skills}>
+          {/* media de acertos de habilidades [correto] */}
+          <SkillsChart />
+        </div>
 
+        <ContainerChooseAnSkill />
+      </main>
+    </>
+  )
+}
+
+export const Example = () => {
   return (
     <>
       <Header label="Gráficos Analíticos" />

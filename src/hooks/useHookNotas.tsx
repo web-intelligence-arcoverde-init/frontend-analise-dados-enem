@@ -9,10 +9,10 @@ export const useHookGabarito = () => {
   }, [])
 
   const getProvinces = async () => {
-    const fetchData = await fetch('http://127.0.0.1:3333/gabarito')
+    const fetchData = await fetch('http://127.0.0.1:3333/redacao/26024691')
 
     const parseData = await fetchData.json()
-    setRedacao(parseData.dataRedacoes)
+    setRedacao(parseData)
     setLoading(false)
   }
 

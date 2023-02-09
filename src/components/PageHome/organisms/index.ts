@@ -1,4 +1,4 @@
-export * from './ContainerSelectionOptionsFilter/ContainerSelectionOptionsFilter'
+export * from '../../organisms/OptionsFilterData/OptionsFilterData'
 export * from './CompetenceChart/CompetenceChart'
 export * from './EssayChart/EssayChart'
 export * from './SkillsChart/SkillsChart'

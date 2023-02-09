@@ -8,7 +8,6 @@ import {
   Legend,
 } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
-import faker from 'faker'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { useHookGabarito } from 'src/hooks'
 
@@ -58,12 +57,6 @@ const labels = [
   '4 Competência',
   '5 Competência',
 ]
-
-/*
-
-Media das notas da redacao
-
-*/
 
 export function EssayChart() {
   const { readacao } = useHookGabarito()

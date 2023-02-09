@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { SelectInput } from '../../atomics'
+import { SelectInput } from '../../PageHome/atomics'
 import { useHookProvinces } from 'src/hooks'
 import { Link } from 'react-router-dom'
 
@@ -30,9 +30,7 @@ const years = [
   { value: '2022' },
 ]
 
-export const ContainerSelectionOptionsFilter = () => {
-  // dados que serão usados como filtro na página dos gráficos
-
+export const OptionsFilterData = () => {
   const [data, setData] = useState([])
 
   const { provinces } = useHookProvinces()
