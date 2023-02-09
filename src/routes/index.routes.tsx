@@ -1,7 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-
 const Home = lazy(() =>
   import('src/pages/Home/Home').then(module => ({
     default: module.Home,
@@ -14,6 +13,11 @@ const Charts = lazy(() =>
   })),
 )
 
+const HeatMap = lazy(() =>
+  import('src/pages/HeatMap/HeatMap').then(module => ({
+    default: module.HeatMap,
+  })),
+)
 
 const Competence = lazy(() =>
   import('src/pages/Competences/Competences').then(module => ({
@@ -24,6 +28,12 @@ const Competence = lazy(() =>
 const AboutCompetences = lazy(() =>
   import('src/pages/About/AboutCompetences/AboutCompetences').then(module => ({
     default: module.AboutCompetences,
+  })),
+)
+
+const AboutEssayCompetence = lazy(() =>
+  import('src/pages/About/AboutEssayCompetence/AboutEssayCompetence').then(module => ({
+    default: module.AboutEssayCompetence,
   })),
 )
 
@@ -47,9 +57,13 @@ export const RoutesConfig = () => {
 
         <Route path="/charts" element={<Charts />} />
 
+        <Route path="/heatmap" element={<HeatMap />} />
+
         <Route path="/competence" element={<Competence />} />
 
         <Route path="/about/competences" element={<AboutCompetences />} />
+
+        <Route path="/about/essaycompetences" element={<AboutEssayCompetence />} />
 
         <Route path="/about/habilities" element={<AboutHabilities />} />
 

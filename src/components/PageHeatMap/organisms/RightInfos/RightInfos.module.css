@@ -1,0 +1,35 @@
+.sideContent {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  flex-direction: column;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.topContainer {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.bottomContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+}
+
+.chartBox {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    height: 50%;
+}

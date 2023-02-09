@@ -1,0 +1,28 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  'heatMap heatMap heatMap rightInfo rightInfo';
+  height: calc(100vh - 70px);
+  width: 100%;
+  grid-gap: 5px;
+  padding: 5px;
+  background-color: whitesmoke;
+}
+
+.heatMap {
+  grid-area: heatMap;
+  height: 100%;
+  background-color: var(--azul);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+}
+
+.rightInfo {
+  grid-area: rightInfo;
+  width: 100%;
+}

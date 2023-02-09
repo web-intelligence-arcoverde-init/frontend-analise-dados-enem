@@ -1,0 +1,32 @@
+.wrapper {
+  overflow: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.table,
+.table th,
+.table td {
+  border-collapse: collapse;
+}
+
+.table {
+  text-align: center;
+  width: 100%;
+  color: black;
+  border-collapse: separate;
+  overflow: scroll;
+}
+
+.table tr th {
+  background-color: var(--azulescuro);
+  color: white;
+  font-size: 19px;
+  
+}
+
+.table tr {
+  width: 100%;
+  line-height: 30px;
+  background-color: white;
+}

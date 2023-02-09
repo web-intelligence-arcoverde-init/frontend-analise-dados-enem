@@ -9,6 +9,8 @@ import Header from 'src/components/PageCharts/organisms/Header'
 import LeftInfos from 'src/components/PageCharts/organisms/ContainerLeftInfos/ContainerLeftInfos'
 import ContainerChooseAnSkill from 'src/components/PageCharts/organisms/ContainerChooseAnSkill/ContainerChooseAnSkill'
 
+import { LinkButton } from 'src/components'
+
 export const Charts = () => {
   return (
     <>
@@ -45,6 +47,7 @@ export const Example = () => {
         </div>
         <div className={styles.competence}>
           <CompetenceChart />
+          <LinkButton to="/competence" label="Competências" height={30} />
         </div>
         <ContainerChooseAnSkill />
       </main>
