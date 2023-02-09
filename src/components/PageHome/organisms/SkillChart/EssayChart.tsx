@@ -8,9 +8,8 @@ import {
   Legend,
 } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
-
 import ChartDataLabels from 'chartjs-plugin-datalabels'
-import { useHookSkills } from 'src/hooks/useHookSkills'
+import { useHookGabarito } from 'src/hooks'
 
 ChartJS.register(
   CategoryScale,
@@ -28,32 +27,39 @@ const options = {
   plugins: [
     {
       legend: {
-        position: 'bottom' as const,
+        display: false,
       },
       title: {
         display: true,
-        text: 'Habilidade',
+        text: 'Redação',
       },
     },
     ChartDataLabels,
   ],
+  scales: {
+    x: {
+      grid: {
+        display: false,
+      },
+    },
+    y: {
+      grid: {
+        display: false,
+      },
+    },
+  },
 }
 
-const labels = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
-  23, 24, 25, 26, 27, 28, 29, 30,
-]
+const labels = ['Acertos', 'Erros']
 
-export function SkillsChart() {
-  const { skills } = useHookSkills()
-
+export function SkillChart({ filterData }: any) {
   const data = {
     labels,
     datasets: [
       {
         label: 'Habilidade',
-        data: skills,
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        data: filterData,
+        backgroundColor: '#1BBF83',
         datalabels: {
           color: 'black',
           font: {
@@ -61,7 +67,6 @@ export function SkillsChart() {
             size: '13',
           },
         },
-        fill: true,
       },
     ],
   }

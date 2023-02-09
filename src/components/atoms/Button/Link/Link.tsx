@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import styles from './LinkButtom.module.css'
+import styles from './style.css'
 
 interface LinkButtom {
   label: string
@@ -9,7 +9,7 @@ interface LinkButtom {
   height?: number
 }
 
-export default function LinkButtom(props: LinkButtom): JSX.Element {
+export const LinkButton = (props: LinkButtom): JSX.Element => {
   const style = {
     transform: `translateY(${props.translateY})`,
     height: props.height,
