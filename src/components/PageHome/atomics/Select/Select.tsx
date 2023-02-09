@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { COLORS } from 'src/common' 
+import { COLORS } from 'src/common'
 
 const Container = styled.div`
   display: flex;
@@ -28,15 +28,21 @@ interface OptionProps {
 interface SelectInputProps {
   label: string
   options: OptionProps[]
-  onChange?: (e: any) => any,
-  name?: string,
+  onChange?: (e: any) => any
+  name?: string
 }
 
-export const SelectInput = ({ label, options, onChange, name }: SelectInputProps) => {
+export const SelectInput = ({
+  label,
+  options,
+  onChange,
+  name,
+}: SelectInputProps) => {
   return (
     <Container>
       <Label>{label}:</Label>
       <Select onChange={onChange} name={name}>
+        <option></option>
         {options.map(item => {
           return (
             <option value={item.value} key={item.value}>

@@ -1,2 +1,6 @@
 export * from './Header/Header'
 export * from './LogoEnemContainer/LogoEnemContainer'
+export * from './SelectProvice/SelectProvice'
+export * from './SelectCity/SelectCity'
+export * from './SelectYear/SelectYear'
+export * from './SelectSchool/SelectSchool'

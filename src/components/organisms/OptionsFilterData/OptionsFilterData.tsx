@@ -1,96 +1,57 @@
 import { useState } from 'react'
 
 import { SelectInput } from '../../PageHome/atomics'
-import { useHookProvinces } from 'src/hooks'
+
 import { Link } from 'react-router-dom'
 
 import { Divider, Button, Container, GroupOptions, GroupButton } from './style'
 
+import {
+  SelectCity,
+  SelectProvice,
+  SelectSchool,
+  SelectYear,
+} from 'src/components'
+
 const optionsKnowledgeArea = [
-  { value: '1 - Linguagens, Códigos e suas Tecnologias' },
-  { value: '2 - Ciências Humanas e suas Tecnologias' },
-  { value: '3 - Matemática e suas Tecnologias' },
-  { value: '4 - Ciências da Natureza e suas Tecnologias' },
-  { value: '5 - Redação' },
-]
-const options = [{ value: 'qualquer um' }, { value: 'outra opção' }]
-
-const optionYears = [
-  { value: '2018', text: 'Linguagens, Códigos e suas Tecnologias' },
-]
-
-const years = [
-  { value: '2015' },
-  { value: '2016' },
-  { value: '2017' },
-  { value: '2018' },
-  { value: '2019' },
-  { value: '2020' },
-  { value: '2021' },
-  { value: '2022' },
+  { value: '1 - Linguagens, Códigos e suas Tecnologias', code: '' },
+  { value: '2 - Ciências Humanas e suas Tecnologias', code: '' },
+  { value: '3 - Matemática e suas Tecnologias', code: '' },
+  { value: '4 - Ciências da Natureza e suas Tecnologias', code: '' },
 ]
 
 export const OptionsFilterData = () => {
-  const [data, setData] = useState([])
+  const [estado, setEstado] = useState('')
+  const [cidade, setCidade] = useState('')
+  const [escola, setEscola] = useState('')
+  const [ano, setAno] = useState('')
+  const [tecnologia, setTecnologia] = useState('')
 
-  const { provinces } = useHookProvinces()
-
-  // captura os valores dos options e seta nos estados
   const onChangeHandler = (e: any) => {
     e.preventDefault()
-    //const optionValue = e.target[e.target.selectedIndex].value
-    setData([])
   }
 
   return (
     <Container>
       <GroupOptions>
-        <SelectInput
-          label="Estado"
-          name="province"
-          options={provinces}
-          onChange={e => {
-            onChangeHandler(e)
-          }}
-        />
-        <SelectInput
-          label="Cidade"
-          name="city"
-          options={options}
-          onChange={e => {
-            onChangeHandler(e)
-          }}
-        />
-        <SelectInput
-          label="Ano"
-          name="year"
-          options={years}
-          onChange={e => {
-            onChangeHandler(e)
-          }}
-        />
+        <SelectProvice setEstado={setEstado} />
+        <SelectYear setAno={setAno} />
+        <SelectCity setCidade={setCidade} estado={estado} ano={ano} />
       </GroupOptions>
       <Divider />
-      <SelectInput
-        label="Escola"
-        name="school"
-        options={options}
-        onChange={e => {
-          onChangeHandler(e)
-        }}
-      />
+      <SelectSchool ano={ano} cidade={cidade} setEscola={setEscola} />
       <Divider />
       <SelectInput
         label="Área de conhecimento"
         options={optionsKnowledgeArea}
         name="knowledgeArea"
         onChange={e => {
-          onChangeHandler(e)
+          setTecnologia(e.target.value)
         }}
       />
       <Divider />
       <GroupButton>
-        <Link to="charts" state={{ data }}>
+        <Link to="charts">
           <Button>Gerar Visão Geral</Button>
         </Link>
         <Button>Gerar Mapa de Calor</Button>
