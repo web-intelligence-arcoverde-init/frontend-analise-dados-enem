@@ -27,26 +27,6 @@ export const Charts = () => {
 
   return (
     <>
-      <main className={styles.main}>
-        <div className={styles.essay}>
-          {/* media de cada competencia do ENEM [correto] */}
-          <EssayChart />
-        </div>
-        <div className={styles.skills}>
-          {/* media de acertos de habilidades [correto] */}
-          <SkillsChart />
-        </div>
-
-        {/* acertos e erros por habilidate [correto] */}
-        <ContainerChooseAnSkill />
-      </main>
-    </>
-  )
-}
-
-export const Example = () => {
-  return (
-    <>
       <Header label="Gráficos Analíticos" />
       <main className={styles.main}>
         <LeftInfos />
