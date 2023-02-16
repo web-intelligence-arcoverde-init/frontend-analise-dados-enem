@@ -32,9 +32,11 @@ const AboutCompetences = lazy(() =>
 )
 
 const AboutEssayCompetence = lazy(() =>
-  import('src/pages/About/AboutEssayCompetence/AboutEssayCompetence').then(module => ({
-    default: module.AboutEssayCompetence,
-  })),
+  import('src/pages/About/AboutEssayCompetence/AboutEssayCompetence').then(
+    module => ({
+      default: module.AboutEssayCompetence,
+    }),
+  ),
 )
 
 const AboutHabilities = lazy(() =>
@@ -49,6 +51,12 @@ const GenericNotFound = lazy(() =>
   })),
 )
 
+const RedacaoPage = lazy(() =>
+  import('src/pages/Redacao/Redacao').then(module => ({
+    default: module.Redacao,
+  })),
+)
+
 export const RoutesConfig = () => {
   return (
     <Suspense fallback={<span>Loading...</span>}>
@@ -57,13 +65,18 @@ export const RoutesConfig = () => {
 
         <Route path="/charts" element={<Charts />} />
 
+        <Route path="/radacao" element={<RedacaoPage />} />
+
         <Route path="/heatmap" element={<HeatMap />} />
 
         <Route path="/competence" element={<Competence />} />
 
         <Route path="/about/competences" element={<AboutCompetences />} />
 
-        <Route path="/about/essaycompetences" element={<AboutEssayCompetence />} />
+        <Route
+          path="/about/essaycompetences"
+          element={<AboutEssayCompetence />}
+        />
 
         <Route path="/about/habilities" element={<AboutHabilities />} />
 

@@ -1,4 +1,4 @@
-import styles from './charts.module.css'
+import styles from '../Charts/charts.module.css'
 import { EssayChart } from 'src/components'
 
 export const Redacao = () => {
