@@ -11,6 +11,8 @@ export default function ContainerChooseAnSkill(): JSX.Element {
 
   const [formatedSkill, setFormatedSkill] = useState([])
 
+  const [description, setDescription] = useState('')
+
   const filterInformations = (value: string) => {
     let newArray = []
 
@@ -20,9 +22,11 @@ export default function ContainerChooseAnSkill(): JSX.Element {
 
     newArray.push(example[0].qtdAcertos)
     newArray.push(example[0].qtdErros)
-
+    setDescription(example[0].descricao)
     setFormatedSkill(newArray)
   }
+
+  console.log(description)
 
   return (
     <div className={styles.chooseAnSkill}>
@@ -47,6 +51,12 @@ export default function ContainerChooseAnSkill(): JSX.Element {
         </select>
       </div>
       <div className={styles.bottomContainer}>
+        <div style={{ width: '50%', height: '100%', padding: '10px' }}>
+          <h3 style={{ marginBottom: 10 }}>
+            Descrição da habilidade escolhida:
+          </h3>
+          <h5>{description}</h5>
+        </div>
         <div className={styles.chartBox}>
           <SkillChart filterData={formatedSkill} />
         </div>

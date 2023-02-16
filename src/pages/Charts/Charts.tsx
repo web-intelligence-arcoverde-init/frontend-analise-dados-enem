@@ -31,18 +31,20 @@ export const Charts = () => {
       <main className={styles.main}>
         <LeftInfos />
         <div className={styles.essay}>
-          <EssayChart />
+          <CompetenceChart />
         </div>
         <div className={styles.skills}>
           <SkillsChart />
         </div>
+
         <div className={styles.highestPercent}>
+          <div>
+            <h3>Habilidades com maior percentual de acertos</h3>
+          </div>
+
           <SkillsHighestPercentageSuccessesChart />
         </div>
-        <div className={styles.competence}>
-          <CompetenceChart />
-          <LinkButton to="/competence" label="Competências" height={30} />
-        </div>
+
         <ContainerChooseAnSkill />
       </main>
     </>

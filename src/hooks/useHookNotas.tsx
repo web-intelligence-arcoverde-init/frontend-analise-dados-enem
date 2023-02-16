@@ -17,7 +17,7 @@ export const useHookGabarito = () => {
     const fetchData = await fetch(`http://127.0.0.1:3333/redacao/${cod}`)
 
     const parseData = await fetchData.json()
-    setRedacao(parseData)
+    setRedacao(parseData.data)
     setLoading(false)
   }
 
