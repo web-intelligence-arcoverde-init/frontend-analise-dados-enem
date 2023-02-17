@@ -18,6 +18,7 @@ const optionsCechnology = [
   { value: 'CH - Ciências Humanas e suas Tecnologias', code: 'ch' },
   { value: 'CN - Matemática e suas Tecnologias', code: 'cn' },
   { value: 'MT - Ciências da Natureza e suas Tecnologias', code: 'mt' },
+  { value: 'Redação', code: 'redacao' },
 ]
 
 export const OptionsFilterData = () => {
@@ -38,7 +39,13 @@ export const OptionsFilterData = () => {
 
     localStorage.setItem('data', JSON.stringify(data))
 
-    navigate('/charts')
+    console.log(tecnologia)
+
+    if (tecnologia.toLocaleLowerCase() === 'redação') {
+      navigate('/redacao-media')
+    } else {
+      navigate('/charts')
+    }
   }
 
   return (

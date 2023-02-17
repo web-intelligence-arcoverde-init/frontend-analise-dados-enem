@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import React from 'react'
 
 const Home = lazy(() =>
   import('src/pages/Home/Home').then(module => ({
@@ -65,7 +66,7 @@ export const RoutesConfig = () => {
 
         <Route path="/charts" element={<Charts />} />
 
-        <Route path="/radacao" element={<RedacaoPage />} />
+        <Route path="/redacao-media" element={<RedacaoPage />} />
 
         <Route path="/heatmap" element={<HeatMap />} />
 

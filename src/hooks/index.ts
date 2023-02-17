@@ -1,3 +1,3 @@
 export * from './useHookProvinces'
 
-export * from './useHookNotas'
+export * from './useHookBuscarMediaNotaRedacaoPorEscola'
