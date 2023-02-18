@@ -10,7 +10,7 @@ import {
 import { Bar } from 'react-chartjs-2'
 
 import ChartDataLabels from 'chartjs-plugin-datalabels'
-import { useHookSkills } from 'src/hooks/useHookSkills'
+import { useHookGabaritoPorTecnologia } from 'src/hooks/'
 
 ChartJS.register(
   CategoryScale,
@@ -45,14 +45,14 @@ const labels = [
 ]
 
 export function SkillsChart() {
-  const { skills } = useHookSkills()
+  const { gabaritoPorTecnologia } = useHookGabaritoPorTecnologia()
 
   const data = {
     labels,
     datasets: [
       {
-        label: 'Habilidade',
-        data: skills,
+        label: 'Habilidades',
+        data: gabaritoPorTecnologia,
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
         datalabels: {
           color: 'black',
@@ -66,5 +66,12 @@ export function SkillsChart() {
     ],
   }
 
-  return <Bar options={options} data={data} />
+  return (
+    <>
+      {
+        //@ts-ignore
+        <Bar options={options} data={data} />
+      }
+    </>
+  )
 }

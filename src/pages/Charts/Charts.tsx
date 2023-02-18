@@ -1,15 +1,13 @@
+//@ts-ignore
 import styles from './charts.module.css'
 import {
   CompetenceChart,
-  EssayChart,
   SkillsChart,
   SkillsHighestPercentageSuccessesChart,
 } from 'src/components'
 import Header from 'src/components/PageCharts/organisms/Header'
 import LeftInfos from 'src/components/PageCharts/organisms/ContainerLeftInfos/ContainerLeftInfos'
 import ContainerChooseAnSkill from 'src/components/PageCharts/organisms/ContainerChooseAnSkill/ContainerChooseAnSkill'
-
-import { LinkButton } from 'src/components'
 
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -31,15 +29,15 @@ export const Charts = () => {
       <main className={styles.main}>
         <LeftInfos />
         <div className={styles.essay}>
-          <CompetenceChart />
+          <SkillsChart />
         </div>
         <div className={styles.skills}>
-          <SkillsChart />
+          <CompetenceChart />
         </div>
 
         <div className={styles.highestPercent}>
           <div>
-            <h3>Habilidades com maior percentual de acertos</h3>
+            <h2>Habilidades com maior percentual de acertos</h2>
           </div>
 
           <SkillsHighestPercentageSuccessesChart />

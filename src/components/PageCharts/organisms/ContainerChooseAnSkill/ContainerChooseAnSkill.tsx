@@ -52,10 +52,10 @@ export default function ContainerChooseAnSkill(): JSX.Element {
       </div>
       <div className={styles.bottomContainer}>
         <div style={{ width: '50%', height: '100%', padding: '10px' }}>
-          <h3 style={{ marginBottom: 10 }}>
+          <h2 style={{ marginBottom: 10 }}>
             Descrição da habilidade escolhida:
-          </h3>
-          <h5>{description}</h5>
+          </h2>
+          <h4>{description}</h4>
         </div>
         <div className={styles.chartBox}>
           <SkillChart filterData={formatedSkill} />

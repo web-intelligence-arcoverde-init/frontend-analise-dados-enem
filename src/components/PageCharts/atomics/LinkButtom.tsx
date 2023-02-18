@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+
+//@ts-ignore
 import styles from './LinkButtom.module.css'
 
 interface LinkButtom {
@@ -13,6 +15,7 @@ export default function LinkButtom(props: LinkButtom): JSX.Element {
   const style = {
     transform: `translateY(${props.translateY})`,
     height: props.height,
+    width: '100%',
   }
 
   return (

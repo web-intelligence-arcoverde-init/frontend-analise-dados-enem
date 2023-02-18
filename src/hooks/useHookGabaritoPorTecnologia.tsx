@@ -1,34 +1,35 @@
 import { useEffect, useState } from 'react'
 
-export const useHookSkills = () => {
-  const [skills, setSkills] = useState([])
+export const useHookGabaritoPorTecnologia = () => {
+  const [gabaritoPorTecnologia, setGabaritoPorTecnologia] = useState([])
 
   useEffect(() => {
     let local = localStorage.getItem('data')
 
     if (local) {
       local = JSON.parse(local)
-      console.log(local)
-      getSkills(local)
+      buscarGabaritoPorTecnologia(local)
     }
   }, [])
 
-  const getSkills = async (escola: any) => {
+  const buscarGabaritoPorTecnologia = async (escola: any) => {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         materia: escola.tecnologia,
+        cod_inep: escola.cod_inep,
+        ano: escola.ano,
       }),
     }
 
     const fetchData = await fetch(
-      `http://127.0.0.1:3333/gabarito/${escola.cod_inep}`,
+      `http://127.0.0.1:3333/gabarito-tecnologia`,
       requestOptions,
     )
     const parseData = await fetchData.json()
-    setSkills(parseData)
+    setGabaritoPorTecnologia(parseData)
   }
 
-  return { skills }
+  return { gabaritoPorTecnologia }
 }
