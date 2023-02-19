@@ -51,16 +51,15 @@ const labels = [
 ]
 
 export function CompetenceChart() {
-  const { readacao } = useHookConjuntoHabilidadesPorCompetencia()
-
-  console.log(readacao)
+  const { conjuntoHabilidadeCompetencia } =
+    useHookConjuntoHabilidadesPorCompetencia()
 
   const data = {
     labels,
     datasets: [
       {
         label: 'Conjunto de habilidades por competencia',
-        data: readacao,
+        data: conjuntoHabilidadeCompetencia,
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
       },
     ],

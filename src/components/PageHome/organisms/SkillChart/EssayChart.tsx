@@ -59,7 +59,7 @@ export function SkillChart({ filterData }: any) {
       {
         label: 'Habilidade',
         data: filterData,
-        backgroundColor: '#1BBF83',
+        backgroundColor: ['#1BBF83', 'rgba(255, 99, 132, 0.5)'],
         datalabels: {
           color: 'black',
           font: {

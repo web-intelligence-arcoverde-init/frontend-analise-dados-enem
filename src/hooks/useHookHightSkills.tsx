@@ -20,11 +20,12 @@ export const useHookHightSkills = () => {
       body: JSON.stringify({
         cod_inep: escola.cod_inep,
         materia: escola.tecnologia,
+        ano: escola.ano,
       }),
     }
 
     const fetchData = await fetch(
-      `http://127.0.0.1:3333/hight-skill/${escola.cod_inep}`,
+      `http://127.0.0.1:3333/melhores-habilidades-por-materia`,
       requestOptions,
     )
     const parseData = await fetchData.json()

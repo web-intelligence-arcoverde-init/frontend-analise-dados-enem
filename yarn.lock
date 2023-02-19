@@ -3837,7 +3837,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.0.11":
+"@types/react-dom@npm:^18.0.6":
   version: 18.0.11
   resolution: "@types/react-dom@npm:18.0.11"
   dependencies:
@@ -3855,7 +3855,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-router-dom@npm:^5.3.3":
+"@types/react-router-dom@npm:^5.1.20":
   version: 5.3.3
   resolution: "@types/react-router-dom@npm:5.3.3"
   dependencies:
@@ -3905,7 +3905,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.0.28":
+"@types/react@npm:^18.0.25":
   version: 18.0.28
   resolution: "@types/react@npm:18.0.28"
   dependencies:
@@ -12310,9 +12310,9 @@ __metadata:
     "@types/faker": 6.6.8
     "@types/html-webpack-plugin": ^3.2.6
     "@types/jest": ^29.4.0
-    "@types/react": ^18.0.28
-    "@types/react-dom": ^18.0.11
-    "@types/react-router-dom": ^5.3.3
+    "@types/react": ^18.0.25
+    "@types/react-dom": ^18.0.6
+    "@types/react-router-dom": ^5.1.20
     "@types/react-test-renderer": ^18.0.0
     "@types/styled-components": ^5.1.26
     "@types/webpack": ^5.28.0
@@ -12729,11 +12729,11 @@ __metadata:
 
 "typescript@patch:typescript@^4.9.5#~builtin<compat/typescript>":
   version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=ad5954"
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 8f6260acc86b56bfdda6004bc53f32ea548f543e8baef7071c8e34d29d292f3e375c8416556c8de10b24deef6933cd1c16a8233dc84a3dd43a13a13265d0faab
+  checksum: ab417a2f398380c90a6cf5a5f74badd17866adf57f1165617d6a551f059c3ba0a3e4da0d147b3ac5681db9ac76a303c5876394b13b3de75fdd5b1eaa06181c9d
   languageName: node
   linkType: hard
 

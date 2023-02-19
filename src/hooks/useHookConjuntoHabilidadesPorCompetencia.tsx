@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 
 export const useHookConjuntoHabilidadesPorCompetencia = () => {
-  const [readacao, setRedacao] = useState([])
+  const [conjuntoHabilidadeCompetencia, setConjuntoHabilidadeCompetencia] =
+    useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -25,14 +26,14 @@ export const useHookConjuntoHabilidadesPorCompetencia = () => {
     }
 
     const fetchData = await fetch(
-      `http://127.0.0.1:3333/competence-skill`,
+      `http://127.0.0.1:3333/gabarito-conjunto-competencia-habilidade`,
       requestOptions,
     )
 
     const parseData = await fetchData.json()
-    setRedacao(parseData.questoes)
+    setConjuntoHabilidadeCompetencia(parseData.questoes)
     setLoading(false)
   }
 
-  return { readacao, loading }
+  return { conjuntoHabilidadeCompetencia, loading }
 }

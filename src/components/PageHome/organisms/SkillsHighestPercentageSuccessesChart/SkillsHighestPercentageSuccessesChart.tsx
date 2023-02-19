@@ -25,7 +25,7 @@ export const SkillsHighestPercentageSuccessesChart = () => {
     labels: skills.labels,
     datasets: [
       {
-        label: '# of Votes',
+        label: `acertos`,
         data: skills.data,
         backgroundColor: [
           'rgba(255, 99, 132, 0.5)',

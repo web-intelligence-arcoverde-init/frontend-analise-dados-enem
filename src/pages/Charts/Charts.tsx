@@ -37,7 +37,7 @@ export const Charts = () => {
 
         <div className={styles.highestPercent}>
           <div>
-            <h2>Habilidades com maior percentual de acertos</h2>
+            <h2>Top 5 habilidades com mais acertos</h2>
           </div>
 
           <SkillsHighestPercentageSuccessesChart />
