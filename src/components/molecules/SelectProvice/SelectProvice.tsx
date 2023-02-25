@@ -1,16 +1,28 @@
-import { SelectInput } from 'src/components'
-import { useHookProvinces } from 'src/hooks'
+import { useDispatch, useSelector } from 'react-redux'
+import { EstadosCustomSelect } from 'src/components'
+
+import {
+  readCityRequest,
+  changerValueFilterSelect,
+} from 'src/store/modules/filter/actions'
 
 export const SelectProvice = ({ setEstado }: any) => {
-  const { provinces } = useHookProvinces()
+  const ano = useSelector((state: any) => state.filters.filterSelect.ano)
+
+  const uf = useSelector((state: any) => state.filters.uf)
+
+  const dispatch = useDispatch()
 
   return (
-    <SelectInput
+    <EstadosCustomSelect
       label="Estado"
       name="province"
-      options={provinces}
+      options={uf}
       onChange={e => {
-        setEstado(e.target.value)
+        dispatch(
+          changerValueFilterSelect({ name: 'estado', value: e.target.value }),
+        )
+        dispatch(readCityRequest({ ano: ano, uf: e.target.value }))
       }}
     />
   )

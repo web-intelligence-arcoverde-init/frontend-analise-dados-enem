@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { SelectInput } from '../../PageHome/atomics'
+import { SelectInput, EstadosCustomSelect } from '../../PageHome/atomics'
 
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -39,8 +39,6 @@ export const OptionsFilterData = () => {
 
     localStorage.setItem('data', JSON.stringify(data))
 
-    console.log(tecnologia)
-
     if (tecnologia.toLocaleLowerCase() === 'redação') {
       navigate('/redacao-media')
     } else {
@@ -51,8 +49,8 @@ export const OptionsFilterData = () => {
   return (
     <Container>
       <GroupOptions>
-        <SelectProvice setEstado={setEstado} />
         <SelectYear setAno={setAno} />
+        <SelectProvice setEstado={setEstado} />
         <SelectCity setCidade={setCidade} estado={estado} ano={ano} />
       </GroupOptions>
       <Divider />

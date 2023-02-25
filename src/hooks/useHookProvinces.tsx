@@ -8,17 +8,22 @@ export const useHookProvinces = () => {
   }, [])
 
   const getProvinces = async () => {
-    const fetchData = await fetch('http://127.0.0.1:3333/uf')
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        ano: '2019',
+      }),
+    }
+
+    const fetchData = await fetch(
+      '18.228.9.148:3333/api/v1/estados',
+      requestOptions,
+    )
 
     const parseData = await fetchData.json()
 
-    let formatedResponse: any = []
-
-    parseData.map((item: any) => {
-      formatedResponse.push({ value: item.sg_uf_esc })
-    })
-
-    setProvinces(formatedResponse)
+    setProvinces(parseData)
   }
 
   return { provinces }

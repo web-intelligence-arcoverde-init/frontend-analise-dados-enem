@@ -1,35 +1,32 @@
-import { SelectInput } from 'src/components'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { useEffect, useState } from 'react'
+import { EstadosCustomSelect } from 'src/components'
+import {
+  readEyarsRequest,
+  changerValueFilterSelect,
+  readUfRequest,
+} from 'src/store/modules/filter/actions'
 
-export const SelectYear = ({ setAno }: any) => {
-  const [anos, setAnos] = useState([])
+export const SelectYear = () => {
+  const dispatch = useDispatch()
+
+  const anos = useSelector((state: any) => state.filters.years)
 
   useEffect(() => {
-    getAnos()
+    dispatch(readEyarsRequest())
   }, [])
 
-  const getAnos = async () => {
-    const fetchData = await fetch('http://127.0.0.1:3333/anos')
-
-    const parseData = await fetchData.json()
-
-    let formatedResponse: any = []
-
-    parseData.map((item: any) => {
-      formatedResponse.push({ value: item.nu_ano })
-    })
-
-    setAnos(formatedResponse)
-  }
-
   return (
-    <SelectInput
+    <EstadosCustomSelect
       label="Ano"
       name="city"
       options={anos}
       onChange={e => {
-        setAno(e.target.value)
+        dispatch(
+          changerValueFilterSelect({ name: 'ano', value: e.target.value }),
+        )
+        dispatch(readUfRequest(e.target.value))
       }}
     />
   )

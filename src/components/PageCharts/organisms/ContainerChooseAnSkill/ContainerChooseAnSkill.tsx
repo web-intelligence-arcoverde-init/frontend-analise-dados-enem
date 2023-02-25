@@ -26,8 +26,6 @@ export default function ContainerChooseAnSkill(): JSX.Element {
     setFormatedSkill(newArray)
   }
 
-  console.log(description)
-
   return (
     <div className={styles.chooseAnSkill}>
       <div className={styles.topContainer}>

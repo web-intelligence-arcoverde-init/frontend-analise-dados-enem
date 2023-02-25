@@ -1,39 +1,25 @@
 import { SelectInput } from 'src/components'
 
-import { useEffect, useState } from 'react'
+import { changerValueFilterSelect } from 'src/store/modules/filter/actions'
 
-export const SelectCity = ({ setCidade, estado }: any) => {
-  const [cidades, setCidades] = useState([])
+import { useDispatch, useSelector } from 'react-redux'
 
-  useEffect(() => {
-    getCidade()
-  }, [estado])
+import { EstadosCustomSelect } from 'src/components'
 
-  const getCidade = async () => {
-    if (estado !== '') {
-      const fetchData = await fetch(
-        `http://127.0.0.1:3333/city/${estado.toUpperCase()}`,
-      )
+export const SelectCity = () => {
+  const cidades = useSelector((state: any) => state.filters.city)
 
-      const parseData = await fetchData.json()
-
-      let formatedResponse: any = []
-
-      parseData.map((item: any) => {
-        formatedResponse.push({ value: item.municipio })
-      })
-
-      setCidades(formatedResponse)
-    }
-  }
+  const dispatch = useDispatch()
 
   return (
-    <SelectInput
+    <EstadosCustomSelect
       label="Cidade"
       name="city"
       options={cidades}
       onChange={e => {
-        setCidade(e.target.value)
+        dispatch(
+          changerValueFilterSelect({ name: 'cidade', value: e.target.value }),
+        )
       }}
     />
   )

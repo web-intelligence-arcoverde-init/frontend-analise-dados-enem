@@ -6,10 +6,7 @@ import { CompetenceChart } from 'src/components'
 import ContainerChooseAnCompetence from 'src/components/PageCompetences/organisms/ContainerChooseAnCompetence/ContainerChooseAnCompetence'
 
 export const Competence = (): JSX.Element => {
-
-
-  const data = JSON.parse(localStorage.getItem("data"))
-  console.log(data)
+  const data = JSON.parse(localStorage.getItem('data'))
 
   return (
     <>

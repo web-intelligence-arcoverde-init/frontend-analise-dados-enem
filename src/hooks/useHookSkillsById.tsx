@@ -8,7 +8,6 @@ export const useHookSkillsById = () => {
 
     if (local) {
       local = JSON.parse(local)
-      console.log(local)
       getSkills(local)
     }
   }, [])
