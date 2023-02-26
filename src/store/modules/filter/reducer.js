@@ -12,6 +12,7 @@ const INITIAL_STATE = {
     estado: '',
     cidade: '',
     escola: '',
+    tecnologia: '',
   },
 }
 
@@ -32,6 +33,12 @@ function Filters(state = INITIAL_STATE, actions) {
     case Types.READ_CITY_SUCCESS: {
       return produce(state, draft => {
         draft.city = actions.data
+      })
+    }
+
+    case Types.READ_SCHOOL_SUCCESS: {
+      return produce(state, draft => {
+        draft.school = actions.data
       })
     }
 

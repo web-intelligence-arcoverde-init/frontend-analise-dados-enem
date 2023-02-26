@@ -1,8 +1,6 @@
-import { useState } from 'react'
+import { SelectInput } from '../../PageHome/atomics'
 
-import { SelectInput, EstadosCustomSelect } from '../../PageHome/atomics'
-
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { Divider, Button, Container, GroupOptions, GroupButton } from './style'
 
@@ -12,6 +10,8 @@ import {
   SelectSchool,
   SelectYear,
 } from 'src/components'
+import { changerValueFilterSelect } from 'src/store/modules/filter/actions'
+import { useDispatch, useSelector } from 'react-redux'
 
 const optionsCechnology = [
   { value: 'LC - Linguagens, Códigos e suas Tecnologias', code: 'lc' },
@@ -22,46 +22,43 @@ const optionsCechnology = [
 ]
 
 export const OptionsFilterData = () => {
-  const [estado, setEstado] = useState('')
-  const [cidade, setCidade] = useState('')
-  const [escola, setEscola] = useState('')
-  const [ano, setAno] = useState('')
-  const [tecnologia, setTecnologia] = useState('')
+  const data = useSelector((state: any) => state.filters.filterSelect)
 
   const navigate = useNavigate()
 
   const handleSubmit = () => {
-    const data = {
-      cod_inep: escola,
-      tecnologia,
-      ano,
-    }
-
     localStorage.setItem('data', JSON.stringify(data))
 
-    if (tecnologia.toLocaleLowerCase() === 'redação') {
+    if (data.tecnologia.toLocaleLowerCase() === 'redação') {
       navigate('/redacao-media')
     } else {
       navigate('/charts')
     }
   }
 
+  const dispatch = useDispatch()
+
   return (
     <Container>
       <GroupOptions>
-        <SelectYear setAno={setAno} />
-        <SelectProvice setEstado={setEstado} />
-        <SelectCity setCidade={setCidade} estado={estado} ano={ano} />
+        <SelectYear />
+        <SelectProvice />
+        <SelectCity />
       </GroupOptions>
       <Divider />
-      <SelectSchool ano={ano} cidade={cidade} setEscola={setEscola} />
+      <SelectSchool />
       <Divider />
       <SelectInput
         label="Área de conhecimento"
         options={optionsCechnology}
         name="knowledgeArea"
         onChange={e => {
-          setTecnologia(e.target.value.split(' ', 1)[0].toLowerCase())
+          dispatch(
+            changerValueFilterSelect({
+              name: 'tecnologia',
+              value: e.target.value.split(' ', 1)[0].toLowerCase(),
+            }),
+          )
         }}
       />
       <Divider />

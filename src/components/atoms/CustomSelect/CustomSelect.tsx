@@ -44,10 +44,10 @@ export const CustomSelect = ({
       <Label>{label}:</Label>
       <Select onChange={onChange} name={name}>
         <option></option>
-        {options.map(item => {
+        {options.map((item: any) => {
           return (
             <option value={item.cod_inep} key={item.value}>
-              {item.value}
+              {item.escola}
             </option>
           )
         })}

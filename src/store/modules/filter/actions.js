@@ -27,3 +27,11 @@ export function readCityRequest(data) {
 export function readCitySuccess(data) {
   return { type: Types.READ_CITY_SUCCESS, data }
 }
+
+export function readSchoolRequest(data) {
+  return { type: Types.READ_SCHOOL_REQUEST, data }
+}
+
+export function readSchoolSuccess(data) {
+  return { type: Types.READ_SCHOOL_SUCCESS, data }
+}

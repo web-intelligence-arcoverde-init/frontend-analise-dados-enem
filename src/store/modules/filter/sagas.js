@@ -4,7 +4,12 @@ import { takeLatest, all, call, put } from 'redux-saga/effects'
 import api from '../../../services/api'
 
 import Types from './types'
-import { readEyarsSuccess, readUfSuccess, readCitySuccess } from './actions'
+import {
+  readEyarsSuccess,
+  readUfSuccess,
+  readCitySuccess,
+  readSchoolSuccess,
+} from './actions'
 
 export function* searchYears() {
   try {
@@ -36,8 +41,19 @@ export function* searchCity(data) {
   }
 }
 
+export function* searchSchool(data) {
+  try {
+    const response = yield call(api.post, '/escolas', data.data)
+    const res = response.data
+    yield put(readSchoolSuccess(res))
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export default all([
   takeLatest(Types.READ_YEARS_REQUEST, searchYears),
   takeLatest(Types.READ_UF_REQUEST, searchUfByYear),
   takeLatest(Types.READ_CITY_REQUEST, searchCity),
+  takeLatest(Types.READ_SCHOOL_REQUEST, searchSchool),
 ])

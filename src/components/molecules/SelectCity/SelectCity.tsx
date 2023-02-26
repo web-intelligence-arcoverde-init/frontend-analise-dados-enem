@@ -1,6 +1,7 @@
-import { SelectInput } from 'src/components'
-
-import { changerValueFilterSelect } from 'src/store/modules/filter/actions'
+import {
+  changerValueFilterSelect,
+  readSchoolRequest,
+} from 'src/store/modules/filter/actions'
 
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -8,6 +9,10 @@ import { EstadosCustomSelect } from 'src/components'
 
 export const SelectCity = () => {
   const cidades = useSelector((state: any) => state.filters.city)
+
+  const { cidade, estado } = useSelector(
+    (state: any) => state.filters.filterSelect,
+  )
 
   const dispatch = useDispatch()
 
@@ -20,6 +25,7 @@ export const SelectCity = () => {
         dispatch(
           changerValueFilterSelect({ name: 'cidade', value: e.target.value }),
         )
+        dispatch(readSchoolRequest({ cidade: e.target.value, uf: estado }))
       }}
     />
   )

@@ -1,51 +1,12 @@
-import { SelectInput, CustomSelect } from 'src/components'
+import { CustomSelect } from 'src/components'
 
-import { useEffect, useState } from 'react'
+import { changerValueFilterSelect } from 'src/store/modules/filter/actions'
+import { useDispatch, useSelector } from 'react-redux'
 
-export const SelectSchool = ({ setEscola, cidade, ano }: any) => {
-  const [escolas, setEscolas] = useState([])
+export const SelectSchool = () => {
+  const dispatch = useDispatch()
 
-  useEffect(() => {
-    getEscolas()
-  }, [cidade, ano])
-
-  /*
-  
-  
-   - Trocar para metodo post tanto no back quanto no front para manda as informações da cidade junto com o ano
-   
-  
-  */
-
-  const getEscolas = async () => {
-    if (cidade !== '' && ano !== '') {
-      const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          cidade,
-          ano,
-        }),
-      }
-
-      const example = JSON.stringify(cidade)
-
-      const fetchData = await fetch(
-        `http://127.0.0.1:3333/escolas`,
-        requestOptions,
-      )
-
-      const parseData = await fetchData.json()
-
-      let formatedResponse: any = []
-
-      parseData.map((item: any) => {
-        formatedResponse.push({ value: item.escola, cod_inep: item.cod_inep })
-      })
-
-      setEscolas(formatedResponse)
-    }
-  }
+  const escolas = useSelector((state: any) => state.filters.school)
 
   return (
     <CustomSelect
@@ -53,7 +14,9 @@ export const SelectSchool = ({ setEscola, cidade, ano }: any) => {
       name="school"
       options={escolas}
       onChange={e => {
-        setEscola(e.target.value)
+        dispatch(
+          changerValueFilterSelect({ name: 'escola', value: e.target.value }),
+        )
       }}
     />
   )
