@@ -1,6 +1,5 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import React from 'react'
 
 const Home = lazy(() =>
   import('src/pages/Home/Home').then(module => ({
