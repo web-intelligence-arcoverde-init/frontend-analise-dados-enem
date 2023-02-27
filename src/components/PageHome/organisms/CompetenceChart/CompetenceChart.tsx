@@ -50,16 +50,29 @@ const labels = [
   'Competencia 9',
 ]
 
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { readCompetenceSkillRequest } from 'src/store/modules/results/actions'
+
 export function CompetenceChart() {
   /*const { conjuntoHabilidadeCompetencia } =
     useHookConjuntoHabilidadesPorCompetencia()
   */
+
+  const dispatch = useDispatch()
+
+  const { competenceSkills } = useSelector((state: any) => state.results)
+
+  useEffect(() => {
+    dispatch(readCompetenceSkillRequest())
+  }, [])
+
   const data = {
     labels,
     datasets: [
       {
         label: 'Conjunto de habilidades por competencia',
-        data: [],
+        data: competenceSkills,
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
       },
     ],

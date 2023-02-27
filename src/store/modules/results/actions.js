@@ -7,3 +7,11 @@ export function readSkillsRequest(data) {
 export function readSkillsSuccess(data) {
   return { type: Types.READ_SKILLS_SUCCESS, data }
 }
+
+export function readCompetenceSkillRequest() {
+  return { type: Types.READ_FEEDBACK_COMPETENCE_SKILL_REQUEST }
+}
+
+export function readCompetenceSkillSuccess(data) {
+  return { type: Types.READ_FEEDBACK_COMPETENCE_SKILL_SUCCESS, data }
+}
