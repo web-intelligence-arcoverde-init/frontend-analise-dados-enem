@@ -1,0 +1,8 @@
+const Types = {
+  READ_SKILLS_REQUEST: '@results/READ_SKILLS_REQUEST',
+  READ_SKILLS_SUCCESS: '@results/READ_SKILLS_SUCCESS',
+
+  CHANGER_VALUE_FILTER_SELECT: '@filter/CHANGER_VALUE_FILTER_SELECT',
+}
+
+export default Types

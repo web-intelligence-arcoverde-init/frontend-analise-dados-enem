@@ -19,14 +19,14 @@ ChartJS.register(
 )
 
 export const SkillsHighestPercentageSuccessesChart = () => {
-  const { skills } = useHookHightSkills()
+  //const { skills } = useHookHightSkills()
 
   const data = {
-    labels: skills.labels,
+    labels: [],
     datasets: [
       {
         label: `acertos`,
-        data: skills.data,
+        data: [],
         backgroundColor: [
           'rgba(255, 99, 132, 0.5)',
           'rgba(54, 162, 235, 0.5)',

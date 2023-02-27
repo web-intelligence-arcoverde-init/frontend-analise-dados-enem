@@ -51,15 +51,15 @@ const labels = [
 ]
 
 export function CompetenceChart() {
-  const { conjuntoHabilidadeCompetencia } =
+  /*const { conjuntoHabilidadeCompetencia } =
     useHookConjuntoHabilidadesPorCompetencia()
-
+  */
   const data = {
     labels,
     datasets: [
       {
         label: 'Conjunto de habilidades por competencia',
-        data: conjuntoHabilidadeCompetencia,
+        data: [],
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
       },
     ],

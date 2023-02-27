@@ -10,7 +10,9 @@ import {
 import { Bar } from 'react-chartjs-2'
 
 import ChartDataLabels from 'chartjs-plugin-datalabels'
-import { useHookGabaritoPorTecnologia } from 'src/hooks/'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { readSkillsRequest } from 'src/store/modules/results/actions'
 
 ChartJS.register(
   CategoryScale,
@@ -45,14 +47,19 @@ const labels = [
 ]
 
 export function SkillsChart() {
-  const { gabaritoPorTecnologia } = useHookGabaritoPorTecnologia()
+  const dispatch = useDispatch()
+  const skills = useSelector((state: any) => state.results.skills)
+
+  useEffect(() => {
+    dispatch(readSkillsRequest())
+  }, [])
 
   const data = {
     labels,
     datasets: [
       {
         label: 'Habilidades',
-        data: gabaritoPorTecnologia,
+        data: skills,
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
         datalabels: {
           color: 'black',

@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { SkillChart } from 'src/components/PageHome/organisms/SkillChart/EssayChart'
 
 export default function ContainerChooseAnSkill(): JSX.Element {
-  const { skills } = useHookSkillsById()
+  //const { skills } = useHookSkillsById()
 
   const [formatedSkill, setFormatedSkill] = useState([])
 
@@ -16,7 +16,7 @@ export default function ContainerChooseAnSkill(): JSX.Element {
   const filterInformations = (value: string) => {
     let newArray = []
 
-    let example = skills.filter(item => {
+    let example = [].filter(item => {
       return item.skill === value
     })
 
@@ -39,7 +39,7 @@ export default function ContainerChooseAnSkill(): JSX.Element {
           onChange={e => filterInformations(e.target.value)}
         >
           <option></option>
-          {skills.map((option, i) => {
+          {[].map((option, i) => {
             return (
               <option key={i} value={option.skill}>
                 {option.skill}
