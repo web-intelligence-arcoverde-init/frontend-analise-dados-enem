@@ -10,7 +10,6 @@ import {
 import { Bar } from 'react-chartjs-2'
 
 import ChartDataLabels from 'chartjs-plugin-datalabels'
-import { useHookConjuntoHabilidadesPorCompetencia } from 'src/hooks/useHookConjuntoHabilidadesPorCompetencia'
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -55,10 +54,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { readCompetenceSkillRequest } from 'src/store/modules/results/actions'
 
 export function CompetenceChart() {
-  /*const { conjuntoHabilidadeCompetencia } =
-    useHookConjuntoHabilidadesPorCompetencia()
-  */
-
   const dispatch = useDispatch()
 
   const { competenceSkills } = useSelector((state: any) => state.results)
