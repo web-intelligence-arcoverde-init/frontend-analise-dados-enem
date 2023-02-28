@@ -15,3 +15,19 @@ export function readCompetenceSkillRequest() {
 export function readCompetenceSkillSuccess(data) {
   return { type: Types.READ_FEEDBACK_COMPETENCE_SKILL_SUCCESS, data }
 }
+
+export function readBestSkillsRequest() {
+  return { type: Types.READ_BEST_SKILLS_REQUEST }
+}
+
+export function readBestSkillsSuccess(data) {
+  return { type: Types.READ_BEST_SKILLS_SUCCESS, data }
+}
+
+export function readSkillByRequest() {
+  return { type: Types.READ_SKILL_BY_REQUEST }
+}
+
+export function readSkillBySuccess(data) {
+  return { type: Types.READ_SKILL_BY_SUCCESS, data }
+}

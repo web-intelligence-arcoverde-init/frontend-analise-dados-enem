@@ -1,13 +1,21 @@
 import styles from './ContainerChooseAnSkill.module.css'
 import { RiStackFill } from 'react-icons/ri'
 
-import { useHookSkillsById } from 'src/hooks/useHookSkillsById'
-
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { SkillChart } from 'src/components/PageHome/organisms/SkillChart/EssayChart'
+import { useDispatch, useSelector } from 'react-redux'
+import { readSkillByRequest } from 'src/store/modules/results/actions'
 
 export default function ContainerChooseAnSkill(): JSX.Element {
-  //const { skills } = useHookSkillsById()
+  const dispatch = useDispatch()
+
+  const { skillBySelect } = useSelector((state: any) => state.results)
+
+  console.log(skillBySelect[0])
+
+  useEffect(() => {
+    dispatch(readSkillByRequest())
+  }, [])
 
   const [formatedSkill, setFormatedSkill] = useState([])
 
@@ -16,7 +24,7 @@ export default function ContainerChooseAnSkill(): JSX.Element {
   const filterInformations = (value: string) => {
     let newArray = []
 
-    let example = [].filter(item => {
+    let example = skillBySelect.filter(item => {
       return item.skill === value
     })
 
@@ -39,7 +47,7 @@ export default function ContainerChooseAnSkill(): JSX.Element {
           onChange={e => filterInformations(e.target.value)}
         >
           <option></option>
-          {[].map((option, i) => {
+          {skillBySelect.map((option, i) => {
             return (
               <option key={i} value={option.skill}>
                 {option.skill}

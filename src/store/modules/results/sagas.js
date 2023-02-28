@@ -3,7 +3,12 @@ import { takeLatest, all, call, put } from 'redux-saga/effects'
 import api from '../../../services/api'
 
 import Types from './types'
-import { readSkillsSuccess, readCompetenceSkillSuccess } from './actions'
+import {
+  readSkillsSuccess,
+  readCompetenceSkillSuccess,
+  readBestSkillsSuccess,
+  readSkillBySuccess,
+} from './actions'
 
 export function* buscarGabaritoPorTecnologia() {
   try {
@@ -35,7 +40,7 @@ export function* buscarTopMelhoresHabilidadesEscola() {
       ano,
     })
     const res = response.data
-    yield put(readSkillsSuccess(res))
+    yield put(readBestSkillsSuccess(res))
   } catch (error) {
     console.log(error)
   }
@@ -53,7 +58,7 @@ export function* buscarGabaritoPorHabilidade() {
       ano,
     })
     const res = response.data
-    yield put(readSkillsSuccess(res))
+    yield put(readSkillBySuccess(res))
   } catch (error) {
     console.log(error)
   }
@@ -104,4 +109,11 @@ export default all([
     Types.READ_FEEDBACK_COMPETENCE_SKILL_REQUEST,
     buscarGabaritoPorConjuntoCompetenciaHabilidade,
   ),
+
+  takeLatest(
+    Types.READ_BEST_SKILLS_REQUEST,
+    buscarTopMelhoresHabilidadesEscola,
+  ),
+
+  takeLatest(Types.READ_SKILL_BY_REQUEST, buscarGabaritoPorHabilidade),
 ])

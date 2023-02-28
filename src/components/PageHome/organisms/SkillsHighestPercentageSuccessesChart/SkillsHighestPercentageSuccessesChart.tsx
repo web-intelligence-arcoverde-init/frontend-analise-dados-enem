@@ -8,7 +8,9 @@ import {
 import { Doughnut } from 'react-chartjs-2'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 
-import { useHookHightSkills } from 'src/hooks/useHookHightSkills'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { readBestSkillsRequest } from 'src/store/modules/results/actions'
 
 ChartJS.register(
   RadialLinearScale,
@@ -19,14 +21,21 @@ ChartJS.register(
 )
 
 export const SkillsHighestPercentageSuccessesChart = () => {
-  //const { skills } = useHookHightSkills()
+  const dispatch = useDispatch()
+  const { data, labels } = useSelector(
+    (state: any) => state.results.hightSkills,
+  )
 
-  const data = {
-    labels: [],
+  useEffect(() => {
+    dispatch(readBestSkillsRequest())
+  }, [])
+
+  const dataChart = {
+    labels,
     datasets: [
       {
         label: `acertos`,
-        data: [],
+        data: data,
         backgroundColor: [
           'rgba(255, 99, 132, 0.5)',
           'rgba(54, 162, 235, 0.5)',
@@ -47,5 +56,5 @@ export const SkillsHighestPercentageSuccessesChart = () => {
     ],
   }
 
-  return <Doughnut data={data} />
+  return <Doughnut data={dataChart} />
 }
