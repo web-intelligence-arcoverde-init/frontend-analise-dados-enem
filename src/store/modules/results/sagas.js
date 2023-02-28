@@ -8,6 +8,7 @@ import {
   readCompetenceSkillSuccess,
   readBestSkillsSuccess,
   readSkillBySuccess,
+  readEssaySuccess,
 } from './actions'
 
 export function* buscarGabaritoPorTecnologia() {
@@ -97,7 +98,7 @@ export function* buscarMediaRedacaoEscola() {
       ano,
     })
     const res = response.data
-    yield put(readSkillsSuccess(res))
+    yield put(readEssaySuccess(res))
   } catch (error) {
     console.log(error)
   }
@@ -116,4 +117,5 @@ export default all([
   ),
 
   takeLatest(Types.READ_SKILL_BY_REQUEST, buscarGabaritoPorHabilidade),
+  takeLatest(Types.READ_ESSAY_REQUEST, buscarMediaRedacaoEscola),
 ])

@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect } from 'react'
 
 import {
   Chart as ChartJS,
@@ -11,10 +11,11 @@ import {
 } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
-import { useHookBuscarMediaNotaRedacaoPorEscola } from 'src/hooks'
 
 import styled from 'styled-components'
 import { COLORS } from 'src/common'
+import { useDispatch, useSelector } from 'react-redux'
+import { readEssayRequest } from 'src/store/modules/results/actions'
 import { useNavigate } from 'react-router'
 
 export const Button = styled.button`
@@ -73,17 +74,16 @@ const labels = [
 ]
 
 export function EssayChart() {
-  const { mediaNotaRedacaoPorEscola, descricaoCompetenciaRedacao } =
-    useHookBuscarMediaNotaRedacaoPorEscola()
-
-  const navigation = useNavigate()
+  const dataEssayAverage = useSelector(
+    (state: any) => state.results.essayAverage,
+  )
 
   const data = {
     labels,
     datasets: [
       {
         label: 'Media escolar da redação',
-        data: mediaNotaRedacaoPorEscola,
+        data: dataEssayAverage.data,
         backgroundColor: '#1BBF83',
         datalabels: {
           color: 'black',
@@ -96,6 +96,8 @@ export function EssayChart() {
     ],
   }
 
+  const navigate = useNavigate()
+
   return (
     <div
       style={{
@@ -106,7 +108,7 @@ export function EssayChart() {
       }}
     >
       <div style={{ width: '80%', height: '45vh' }}>
-        <Button onClick={() => navigation('/')}>Voltar para inicio</Button>
+        <Button onClick={() => navigate('/')}>Voltar para inicio</Button>
         {
           //@ts-ignore
           <Bar options={options} data={data} />
@@ -115,7 +117,7 @@ export function EssayChart() {
       <div style={{ width: '80%', marginTop: '140px' }}>
         <h2 style={{ marginBottom: '10px' }}>Descrição dascompetencias</h2>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-          {descricaoCompetenciaRedacao.map(
+          {dataEssayAverage.descricaoComposicao.map(
             (item: { desc_comp_redacao?: string }) => {
               return (
                 <h4 style={{ lineHeight: '20px', marginBottom: '10px' }}>

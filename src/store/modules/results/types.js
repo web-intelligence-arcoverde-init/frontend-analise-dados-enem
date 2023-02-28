@@ -18,6 +18,9 @@ const Types = {
 
   READ_SKILL_BY_REQUEST: '@results/READ_SKILL_BY_REQUEST',
   READ_SKILL_BY_SUCCESS: '@results/READ_SKILL_BY_SUCCESS',
+
+  READ_ESSAY_REQUEST: '@results/READ_ESSAY_REQUEST',
+  READ_ESSAY_SUCCESS: '@results/READ_ESSAY_SUCCESS',
 }
 
 export default Types

@@ -31,3 +31,11 @@ export function readSkillByRequest() {
 export function readSkillBySuccess(data) {
   return { type: Types.READ_SKILL_BY_SUCCESS, data }
 }
+
+export function readEssayRequest() {
+  return { type: Types.READ_ESSAY_REQUEST }
+}
+
+export function readEssaySuccess(data) {
+  return { type: Types.READ_ESSAY_SUCCESS, data }
+}

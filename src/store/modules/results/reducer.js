@@ -6,6 +6,8 @@ const INITIAL_STATE = {
   example: [],
   hightSkills: {},
   skillBySelect: [],
+  essayAverage: { data: [], descricaoComposicao: [] },
+  loadingEssayAverage: true,
 }
 
 export default function Results(state = INITIAL_STATE, actions) {
@@ -31,6 +33,13 @@ export default function Results(state = INITIAL_STATE, actions) {
     case Types.READ_SKILL_BY_SUCCESS: {
       return produce(state, draft => {
         draft.skillBySelect = actions.data
+      })
+    }
+
+    case Types.READ_ESSAY_SUCCESS: {
+      return produce(state, draft => {
+        draft.essayAverage = actions.data
+        draft.loadingEssayAverage = false
       })
     }
 
