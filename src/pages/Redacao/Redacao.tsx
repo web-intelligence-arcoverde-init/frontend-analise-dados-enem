@@ -1,5 +1,3 @@
-//@ts-ignore
-import styles from '../Charts/charts.module.css'
 import { EssayChart } from 'src/components'
 import { useDispatch, useSelector } from 'react-redux'
 import { readEssayRequest } from 'src/store/modules/results/actions'
@@ -18,8 +16,6 @@ export const Redacao = () => {
   }, [])
 
   return (
-    <div className={styles.essay}>
-      {loadingEssayAverage ? <span>Loading...</span> : <EssayChart />}
-    </div>
+    <div>{loadingEssayAverage ? <span>Loading...</span> : <EssayChart />}</div>
   )
 }

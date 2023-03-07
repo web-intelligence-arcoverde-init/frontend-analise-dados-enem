@@ -1,4 +1,3 @@
-//@ts-ignore
 import styles from './Header.module.css'
 
 interface HeaderProps {

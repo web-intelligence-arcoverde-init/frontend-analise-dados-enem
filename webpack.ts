@@ -18,7 +18,7 @@ const config = {
   entry: path.resolve(__dirname, 'src', 'index.tsx'),
   output: {
     publicPath: '/',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
   },
 
@@ -48,8 +48,7 @@ const config = {
         test: /\.css/,
         use: [
           { loader: 'style-loader' },
-          { loader: 'css-loader', options: { modules: true } },
-          { loader: 'typings-for-css-modules-loader?modules&namedExport'},
+          { loader: 'css-loader', options: { modules: true } }
         ],
       },
       {
