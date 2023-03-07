@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom'
 import LinkButtom from '../../atomics/LinkButtom'
+//@ts-ignore
 import styles from './ContainerLeftInfos.module.css'
 import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 export default function LeftInfos(): JSX.Element {
+  const [storage, setStorage] = useState()
 
-    const [ storage, setStorage ] = useState()
-
-    useEffect(() => {
-      const data = JSON.parse(localStorage.getItem('data'))
-      setStorage(data)
-    })
+  useEffect(() => {
+    //@ts-ignore
+    const data = JSON.parse(localStorage.getItem('data'))
+    setStorage(data)
+  })
 
   return (
     <div className={styles.leftInformations}>

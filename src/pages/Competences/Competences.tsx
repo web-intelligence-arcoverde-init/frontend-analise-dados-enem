@@ -1,3 +1,4 @@
+//@ts-ignore
 import styles from './Competences.module.css'
 import { useLocation } from 'react-router-dom'
 import Header from 'src/components/PageCharts/organisms/Header'
@@ -6,6 +7,7 @@ import { CompetenceChart } from 'src/components'
 import ContainerChooseAnCompetence from 'src/components/PageCompetences/organisms/ContainerChooseAnCompetence/ContainerChooseAnCompetence'
 
 export const Competence = (): JSX.Element => {
+  //@ts-ignore
   const data = JSON.parse(localStorage.getItem('data'))
 
   return (

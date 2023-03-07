@@ -1,3 +1,4 @@
+//@ts-ignore
 import styles from './AboutEssayCompetence.module.css'
 import LinkButtom from 'src/components/PageCharts/atomics/LinkButtom'
 import Header from 'src/components/PageCharts/organisms/Header'
@@ -19,7 +20,12 @@ export const AboutEssayCompetence = () => {
             ipsum debitis assumenda ipsam illo dolore, veritatis deserunt
             voluptatem. Ratione.
           </div>
-          <LinkButtom to="/heatmap" label="Voltar" height={45} translateY="20px" />
+          <LinkButtom
+            to="/heatmap"
+            label="Voltar"
+            height={45}
+            translateY="20px"
+          />
         </div>
       </main>
     </>

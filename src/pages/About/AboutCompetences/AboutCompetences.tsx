@@ -1,3 +1,4 @@
+//@ts-ignore
 import styles from './AboutCompetences.module.css'
 import LinkButtom from 'src/components/PageCharts/atomics/LinkButtom'
 import Header from 'src/components/PageCharts/organisms/Header'

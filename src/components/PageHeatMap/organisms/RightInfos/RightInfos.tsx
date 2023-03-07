@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { RiStackFill } from 'react-icons/ri'
 import LinkButtom from 'src/components/PageCharts/atomics/LinkButtom'
 import { EssayChart, SkillsChart } from 'src/components/PageHome/organisms'
+//@ts-ignore
 import styles from './RightInfos.module.css'
 
 const options = ['C-LC-1', 'C-LC-2', 'C-LC-3']
@@ -24,9 +25,12 @@ export const RightInfos = () => {
         <h2 className={styles.title}>
           <RiStackFill />
           Escolha uma competência
-         
         </h2>
-        <select name="" style={{height: '30px'}} onChange={e => onChangeHandler(e)}>
+        <select
+          name=""
+          style={{ height: '30px' }}
+          onChange={e => onChangeHandler(e)}
+        >
           {options.map((option, i) => {
             return (
               <option key={i} value={option}>
@@ -35,7 +39,7 @@ export const RightInfos = () => {
             )
           })}
         </select>
-        <LinkButtom to='/' label='Voltar' height={30}/>
+        <LinkButtom to="/" label="Voltar" height={30} />
       </div>
       <div className={styles.bottomContainer}>
         <div className={styles.textBox}>
@@ -50,7 +54,12 @@ export const RightInfos = () => {
         </div>
         <div className={styles.chartBox}>
           <EssayChart />
-          <LinkButtom to="/about/essaycompetences" label="Competências" height={30} translateY="20px"/>
+          <LinkButtom
+            to="/about/essaycompetences"
+            label="Competências"
+            height={30}
+            translateY="20px"
+          />
         </div>
       </div>
     </aside>

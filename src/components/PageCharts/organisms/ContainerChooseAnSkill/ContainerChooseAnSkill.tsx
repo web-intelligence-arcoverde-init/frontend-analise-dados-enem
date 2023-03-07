@@ -1,3 +1,4 @@
+//@ts-ignore
 import styles from './ContainerChooseAnSkill.module.css'
 import { RiStackFill } from 'react-icons/ri'
 

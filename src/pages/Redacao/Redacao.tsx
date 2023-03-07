@@ -1,3 +1,4 @@
+//@ts-ignore
 import styles from '../Charts/charts.module.css'
 import { EssayChart } from 'src/components'
 import { useDispatch, useSelector } from 'react-redux'

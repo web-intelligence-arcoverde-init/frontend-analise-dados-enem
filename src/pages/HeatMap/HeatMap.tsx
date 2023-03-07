@@ -1,3 +1,4 @@
+//@ts-ignore
 import styles from './HeatMap.module.css'
 import Header from 'src/components/PageCharts/organisms/Header'
 import { HeatTable } from 'src/components'
