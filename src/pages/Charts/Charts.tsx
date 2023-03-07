@@ -1,5 +1,4 @@
-//@ts-ignore
-import styles from './charts.module.css'
+import styles from './style.css'
 import {
   CompetenceChart,
   SkillsChart,

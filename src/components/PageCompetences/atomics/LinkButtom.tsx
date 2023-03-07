@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-//@ts-ignore
 import styles from './LinkButtom.module.css'
 
 interface LinkButtom {

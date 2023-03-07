@@ -1,8 +1,5 @@
-import { Link } from 'react-router-dom'
 import LinkButtom from '../../atomics/LinkButtom'
-//@ts-ignore
 import styles from './ContainerLeftInfos.module.css'
-import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 export default function LeftInfos(): JSX.Element {
